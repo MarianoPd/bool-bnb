@@ -16,6 +16,10 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <button><a href="{{ route('host.flats.index')}}"> Flats</a></button>
+                {{-- <button><a href="{{ route('host.flats.edit')}}"> Edit</a></button> --}}
+                <button><a href="{{ route('host.flats.create')}}"> Create</a></button>
+                {{-- <button><a href="{{ route('host.flats.show')}}"> Show</a></button> --}}
             </div>
         </div>
     </div>
