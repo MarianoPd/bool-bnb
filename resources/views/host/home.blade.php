@@ -22,15 +22,13 @@
 
                     <div class="button-zone mt-4">
 
-                        <a type="button" class="btn btn-primary"
+                        <a type="button" class="btn btn-success"
                         href="{{ route('host.flats.index')}}">Your flats</a>
-                        {{-- <button><a href="{{ route('host.flats.edit')}}"> Edit</a></button> --}}
                         <a type="button" class="btn btn-warning"
                         href="{{ route('host.flats.create')}}">Add a flat</a>
-                        {{-- <button><a href="{{ route('host.flats.show')}}"> Show</a></button> --}}
                         
                     </div>
-
+                    
                 </div>
             </div>
         </div>

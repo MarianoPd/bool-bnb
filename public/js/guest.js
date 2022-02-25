@@ -13001,7 +13001,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! /Users/tave/Documents/Boolean-vsc/Progetto finale Boolean/bool-bnb-2/resources/js/guest.js */"./resources/js/guest.js");
 
 
 /***/ })

@@ -37346,9 +37346,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\sass\admin\style.scss */"./resources/sass/admin/style.scss");
-module.exports = __webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\sass\guest\style.scss */"./resources/sass/guest/style.scss");
+__webpack_require__(/*! /Users/tave/Documents/Boolean-vsc/Progetto finale Boolean/bool-bnb-2/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/tave/Documents/Boolean-vsc/Progetto finale Boolean/bool-bnb-2/resources/sass/admin/style.scss */"./resources/sass/admin/style.scss");
+module.exports = __webpack_require__(/*! /Users/tave/Documents/Boolean-vsc/Progetto finale Boolean/bool-bnb-2/resources/sass/guest/style.scss */"./resources/sass/guest/style.scss");
 
 
 /***/ })
