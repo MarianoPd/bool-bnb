@@ -15,9 +15,16 @@
 
             
 
-            <button class="btn btn-info">
+            <button class="btn btn-info ">
                 <a href="{{route('host.flats.edit', $flat)}}">EDIT</a>
             </button>
+            <form action="{{route('host.flats.destroy', $flat)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger mt-5">
+                    DELETE
+                </button>
+            </form>
 
         </div>
     </div>

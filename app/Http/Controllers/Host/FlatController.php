@@ -120,6 +120,7 @@ class FlatController extends Controller
         if($data['title'] != $flat->title){
             $data['slug'] = Flat::getSlug($data['title']);
         }
+        if(!$data['cover']) $data['cover'] = '';
 
         if($data['cover'] != $flat->cover){
 
@@ -141,9 +142,14 @@ class FlatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Flat $flat)
     {
-        //
+        
+        $flat->delete();
+        if($flat->cover){
+            Storage::delete($flat->cover);
+        }
+        return redirect()->route('host.flats.index');
     }
 
     private function validationData(){

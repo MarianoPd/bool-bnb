@@ -38,7 +38,7 @@
                     <label for="province">Province</label>
                     <input type="text" 
                           class="form-control @error('province') is-invalid @enderror" 
-                          value="{{old('province')}}" style="text-transform:capitalize"
+                          value="{{old('province', $flat->province)}}" style="text-transform:capitalize"
                           id="province"  name="province" placeholder="Insert a province...">
                     @error('province')
                         <p class="invalid-feedback">{{$message}}</p>
@@ -50,7 +50,7 @@
                     <label for="address">Address</label>
                     <input type="text" 
                           class="form-control @error('address') is-invalid @enderror" 
-                          value="{{old('address')}}" style="text-transform:capitalize"
+                          value="{{old('address', $flat->address)}}" style="text-transform:capitalize"
                           id="address"  name="address" placeholder="Insert an address...">
                     @error('address')
                         <p class="invalid-feedback">{{$message}}</p>
@@ -67,7 +67,7 @@
                         <label for="room_number">Room number</label>
                         <input type="number" 
                             class="form-control @error('room_number') is-invalid @enderror" 
-                            value="{{old('room_number')}}" min="1" max="25"
+                            value="{{old('room_number', $flat->room_number)}}" min="1" max="25"
                             id="room_number"  name="room_number" placeholder="1"> 
                         @error('room_number')
                             <p class="invalid-feedback">{{$message}}</p>
@@ -77,7 +77,7 @@
                         <label for="bed_number">Bed number</label>
                         <input type="number" 
                             class="form-control @error('bed_number') is-invalid @enderror" 
-                            value="{{old('bed_number')}}" min="1" max="25"
+                            value="{{old('bed_number', $flat->bed_number)}}" min="1" max="25"
                             id="bed_number"  name="bed_number" placeholder="1"> 
                         @error('bed_number')
                             <p class="invalid-feedback">{{$message}}</p>
@@ -87,7 +87,7 @@
                         <label for="bathroom_number">Bathroom number</label>
                         <input type="number" 
                             class="form-control @error('bathroom_number') is-invalid @enderror" 
-                            value="{{old('bathroom_number')}}" min="1" max="25"
+                            value="{{old('bathroom_number', $flat->bathroom_number)}}" min="1" max="25"
                             id="bathroom_number"  name="bathroom_number" placeholder="1"> 
                         @error('bathroom_number')
                             <p class="invalid-feedback">{{$message}}</p>
@@ -97,7 +97,7 @@
                         <label for="square_meters">Square Meters</label>
                         <input type="number" 
                             class="form-control @error('square_meters') is-invalid @enderror" 
-                            value="{{old('square_meters')}}" min="1" max="25"
+                            value="{{old('square_meters',$flat->square_meters)}}" min="1" max="25"
                             id="square_meters"  name="square_meters" placeholder="1"> 
                         @error('square_meters')
                             <p class="invalid-feedback">{{$message}}</p>
@@ -114,6 +114,7 @@
 
             <button type="submit" class="btn btn-warning">Edit</button>
             <button type="reset" class="btn btn-danger" >Reset</button>
+            
         </form>
     </div>
     
