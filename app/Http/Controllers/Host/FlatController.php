@@ -120,14 +120,16 @@ class FlatController extends Controller
         if($data['title'] != $flat->title){
             $data['slug'] = Flat::getSlug($data['title']);
         }
-        if(!$data['cover']) $data['cover'] = '';
+        
 
-        if($data['cover'] != $flat->cover){
-
-            $data['cover_original_name'] = $request->file('cover')->getClientOriginalName();
-            $image_path = Storage::put('uploads', $data['cover']);
-            Storage::delete($data['cover']);
-            $data['cover'] = $image_path;
+        if(array_key_exists('cover', $data)){
+            if($data['cover'] != $flat->cover){
+                $data['cover_original_name'] = $request->file('cover')->getClientOriginalName();
+                $image_path = Storage::put('uploads', $data['cover']);
+                Storage::delete($data['cover']);
+                $data['cover'] = $image_path;
+            }
+            
         }    
         
 

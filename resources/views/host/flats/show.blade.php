@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         @if ($flat->cover)
-        <div>
-            <img src="{{asset('storage/'. $flat->cover)}}" alt="{{$flat->title}}">
+        <div class="w-100">
+            <img src="{{asset('storage/'. $flat->cover)}}" alt="{{$flat->title}}" class="w-100">
         </div>
         @endif
         <div>
