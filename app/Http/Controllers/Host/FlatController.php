@@ -44,25 +44,7 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => "required|min:3|max:100",
-            'city' => "required|min:2|max:45",
-            'province' => "nullable|min:2|max:3",
-            'address' => "nullable|min:2|max:100",
-            'address' => "nullable|min:2|max:100",
-            'room_number' => "nullable|numeric|min:1|max:120",
-            'bed_number' => "nullable|numeric|min:1|max:120",
-            'bathroom_number' => "nullable|numeric|min:1|max:120",
-            'square_meters' => "nullable|numeric|min:1|max:32000",
-
-
-        ],
-        [
-            'title.required' => "Inserire un titolo dell'annuncio",
-            'title.min' => "Titolo troppo breve",
-            'title.max' => "Titolo più lungo di :max caratteri",
-        ]
-        );
+        $request->validate($this->validationData(), $this->validationErrors());
 
         $data = $request->all();
         
@@ -104,7 +86,12 @@ class FlatController extends Controller
      */
     public function edit($id)
     {
-        return view('host.flats.edit');
+        $flat = Flat::find($id); 
+
+        if($flat){
+            return view('host.flats.edit', compact('flat') );
+        }
+        abort(404, 'Flat not found in the database');
     }
 
     /**
@@ -114,9 +101,19 @@ class FlatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $flat)
     {
-        //
+        $request->validate($this->validationData(), $this->validationErrors());
+
+        $data = $request->all();
+
+        if($data['title'] != $flat->title){
+            $data['slug'] = Flat::getSlug($data['title']);
+        }
+
+        $flat->update($data);
+
+        return redirect()->route('host.flats.show', $flat);
     }
 
     /**
@@ -129,4 +126,28 @@ class FlatController extends Controller
     {
         //
     }
+
+    private function validationData(){
+        return [
+            'title' => "required|min:3|max:100",
+            'city' => "required|min:2|max:45",
+            'province' => "nullable|min:2|max:3",
+            'address' => "nullable|min:2|max:100",
+            'address' => "nullable|min:2|max:100",
+            'room_number' => "nullable|numeric|min:1|max:120",
+            'bed_number' => "nullable|numeric|min:1|max:120",
+            'bathroom_number' => "nullable|numeric|min:1|max:120",
+            'square_meters' => "nullable|numeric|min:1|max:32000",
+
+        ];
+    }
+
+    private function validationErrors(){
+        return [
+            'title.required' => "Inserire un titolo dell'annuncio",
+            'title.min' => "Titolo troppo breve",
+            'title.max' => "Titolo più lungo di :max caratteri",
+        ];
+    }
+
 }
