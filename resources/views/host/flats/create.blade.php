@@ -75,7 +75,7 @@
                     <label for="bed_number">Bed number</label>
                     <input type="number" 
                         class="form-control @error('bed_number') is-invalid @enderror" 
-                        value="{{old('bed_number')}}" min="1" max="25"
+                        value="{{old('bed_number')}}" min="1" max="10"
                         id="bed_number"  name="bed_number" placeholder="1"> 
                     @error('bed_number')
                         <p class="invalid-feedback">{{$message}}</p>
@@ -85,7 +85,7 @@
                     <label for="bathroom_number">Bathroom number</label>
                     <input type="number" 
                         class="form-control @error('bathroom_number') is-invalid @enderror" 
-                        value="{{old('bathroom_number')}}" min="1" max="25"
+                        value="{{old('bathroom_number')}}" min="1" max="5"
                         id="bathroom_number"  name="bathroom_number" placeholder="1"> 
                     @error('bathroom_number')
                         <p class="invalid-feedback">{{$message}}</p>
@@ -95,7 +95,7 @@
                     <label for="square_meters">Square Meters</label>
                     <input type="number" 
                         class="form-control @error('square_meters') is-invalid @enderror" 
-                        value="{{old('square_meters')}}" min="1" max="25"
+                        value="{{old('square_meters')}}" min="1" max="2500"
                         id="square_meters"  name="square_meters" placeholder="1"> 
                     @error('square_meters')
                         <p class="invalid-feedback">{{$message}}</p>

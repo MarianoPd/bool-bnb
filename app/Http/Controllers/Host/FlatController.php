@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Host;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,11 +52,18 @@ class FlatController extends Controller
         
         $data['slug'] = Flat::getSlug($data['title']);
 
-        if(array_key_exists('cover', $data)){
+
+        // controllo input image
+        if (array_key_exists('cover', $data )) {
+            
+            // prendere il nome originale dell'immagine
             $data['cover_original_name'] = $request->file('cover')->getClientOriginalName();
-            $image_path = Storage::put('uploads', $data['cover']);
-            $data['cover'] = $image_path;
-        }   
+            // salvare image e il percorso dell'image
+            $cover_route = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_route;
+        };
+
+        
 
         $new_flat = new Flat;
         $new_flat->fill($data);
@@ -63,6 +71,7 @@ class FlatController extends Controller
 
         
         
+
         $new_flat->save();
         
         return redirect()->route('host.flats.show', $new_flat);
@@ -132,6 +141,20 @@ class FlatController extends Controller
             
         }    
         
+
+        // controllo input image
+        if (array_key_exists('cover', $data )) {
+
+            if($flat->cover){
+                Storage::delete($flat->cover);
+            }
+            
+            // prendere il nome originale dell'immagine
+            $data['cover_original_name'] = $request->file('cover')->getClientOriginalName();
+            // salvare image e il percorso dell'image
+            $cover_route = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_route;
+        };
 
         $flat->update($data);
 
