@@ -8,6 +8,8 @@
             <h5>città: {{$flat->city}}</h5>
             <h5>provincia: {{$flat->province}}</h5>
             <h5>numero di stanze: {{$flat->room_number}}</h5>
+
+            <button>CIAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</button>
         </div>
     </div>
     
