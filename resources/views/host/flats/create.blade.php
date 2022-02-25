@@ -59,9 +59,9 @@
             </div>
 
             {{-- info generali appartamento --}}
-            <div class="info-zone d-flex justify-content-between">
+            <div class="info-zone d-flex ">
                 {{-- numero camere --}}
-                <div class="form-group">
+                <div class="form-group mr-5">
                     <label for="room_number">Room number</label>
                     <input type="number" 
                         class="form-control @error('room_number') is-invalid @enderror" 
@@ -71,6 +71,40 @@
                         <p class="invalid-feedback">{{$message}}</p>
                     @enderror
                 </div>
+                <div class="form-group mr-5">
+                    <label for="bed_number">Bed number</label>
+                    <input type="number" 
+                        class="form-control @error('bed_number') is-invalid @enderror" 
+                        value="{{old('bed_number')}}" min="1" max="25"
+                        id="bed_number"  name="bed_number" placeholder="1"> 
+                    @error('bed_number')
+                        <p class="invalid-feedback">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="form-group mr-5">
+                    <label for="bathroom_number">Bathroom number</label>
+                    <input type="number" 
+                        class="form-control @error('bathroom_number') is-invalid @enderror" 
+                        value="{{old('bathroom_number')}}" min="1" max="25"
+                        id="bathroom_number"  name="bathroom_number" placeholder="1"> 
+                    @error('bathroom_number')
+                        <p class="invalid-feedback">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="form-group mr-5">
+                    <label for="square_meters">Square Meters</label>
+                    <input type="number" 
+                        class="form-control @error('square_meters') is-invalid @enderror" 
+                        value="{{old('square_meters')}}" min="1" max="25"
+                        id="square_meters"  name="square_meters" placeholder="1"> 
+                    @error('square_meters')
+                        <p class="invalid-feedback">{{$message}}</p>
+                    @enderror
+                </div>
+            </div>
+            <div class="mb-5">
+                <label for="cover">Immagine</label>
+                <input type="file" class="btn btn-primary" name="cover" id="cover">
             </div>
 
             <button type="submit" class="btn btn-warning">Create</button>
