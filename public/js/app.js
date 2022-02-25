@@ -37346,9 +37346,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\sass\admin\style.scss */"./resources/sass/admin/style.scss");
-module.exports = __webpack_require__(/*! C:\Users\mario\BoolBnb\bool-bnb\resources\sass\guest\style.scss */"./resources/sass/guest/style.scss");
+__webpack_require__(/*! C:\Users\Utente\Documents\boolean\progetti\bool-bnb\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Utente\Documents\boolean\progetti\bool-bnb\resources\sass\admin\style.scss */"./resources/sass/admin/style.scss");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Documents\boolean\progetti\bool-bnb\resources\sass\guest\style.scss */"./resources/sass/guest/style.scss");
 
 
 /***/ })

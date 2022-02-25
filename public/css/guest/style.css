@@ -10962,7 +10962,45 @@ a.text-dark:focus {
   }
 }
 
-body {
-  background-color: aqua;
+header {
+  background-color: black;
+  height: 80px;
+}
+
+header .logo {
+  width: 115px;
+  height: 75px;
+}
+
+header .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+header a {
+  color: white;
+}
+
+main {
+  height: calc(100vh - 80px);
+}
+
+main .jumbo-structure {
+  color: white;
+  background-color: black;
+}
+
+main .jumbo-structure .jumbo {
+  position: relative;
+  height: 800px;
+  background-image: url("/img/jumbo1.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main .jumbo-structure .jumbo .text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 }
 
