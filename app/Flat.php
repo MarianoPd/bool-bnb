@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
+
 class Flat extends Model
 {
     protected $fillable = [
@@ -35,5 +36,17 @@ class Flat extends Model
             $is_present = Flat::where('slug',$slug)->first();
         }
         return $slug;
+    }
+
+    public function services(){
+        return $this->belongsToMany('App\Service');
+    }
+
+    public function messages(){
+        return $this->hasMany('App\Message');
+    }
+
+    public function sponsorships(){
+        return $this->belongsToMany('App\Sponsorship');
     }
 }
