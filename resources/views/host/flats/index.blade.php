@@ -29,7 +29,9 @@
                     <h5 class="card-title">{{$flat->title}}</h5>
                     <p class="card-text">{{$flat->address}}, {{$flat->city}}, {{$flat->province}}</p>
                     {{-- c'è da aggiungere link allo show del singolo flat --}}
+
                     <a href="{{ route('host.flats.show', $flat) }}" class="btn btn-primary">More info</a>
+
                 </div>
               </div>
         @endforeach

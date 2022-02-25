@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Flat;
 use App\User;
 
+use Illuminate\Support\Facades\Storage;
 
 class FlatController extends Controller
 {
@@ -51,6 +52,7 @@ class FlatController extends Controller
         
         $data['slug'] = Flat::getSlug($data['title']);
 
+
         // controllo input image
         if (array_key_exists('cover', $data )) {
             
@@ -62,9 +64,12 @@ class FlatController extends Controller
         };
 
         
+
         $new_flat = new Flat;
         $new_flat->fill($data);
         $new_flat['user_id'] = Auth::user()->getAuthIdentifier();
+
+        
         
 
         $new_flat->save();
@@ -100,7 +105,7 @@ class FlatController extends Controller
     public function edit($id)
     {
         $flat = Flat::find($id); 
-
+        
         if($flat){
             return view('host.flats.edit', compact('flat') );
         }
@@ -114,15 +119,26 @@ class FlatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $flat)
+    public function update(Request $request,Flat $flat)
     {
         $request->validate($this->validationData(), $this->validationErrors());
 
         $data = $request->all();
-
+        
+        
         if($data['title'] != $flat->title){
             $data['slug'] = Flat::getSlug($data['title']);
         }
+        if(!$data['cover']) $data['cover'] = '';
+
+        if($data['cover'] != $flat->cover){
+
+            $data['cover_original_name'] = $request->file('cover')->getClientOriginalName();
+            $image_path = Storage::put('uploads', $data['cover']);
+            Storage::delete($data['cover']);
+            $data['cover'] = $image_path;
+        }    
+        
 
         // controllo input image
         if (array_key_exists('cover', $data )) {
@@ -149,9 +165,14 @@ class FlatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Flat $flat)
     {
-        //
+        
+        $flat->delete();
+        if($flat->cover){
+            Storage::delete($flat->cover);
+        }
+        return redirect()->route('host.flats.index');
     }
 
     private function validationData(){
