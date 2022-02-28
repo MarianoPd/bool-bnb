@@ -10,7 +10,7 @@
             {{-- titolo appartamento --}}
             <div class="form-group">
                 <label for="title">Titolo</label>
-                <input name="title" id="title" cols="30" rows="5" type="text" 
+                <input name="title" id="title" type="text" min="3" max="100"
                     class="form-control @error('title') is-invalid @enderror" 
                     value="{{old('title')}}"
                     id="title"  name="title" placeholder="Describe your flat...">
