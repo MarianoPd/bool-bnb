@@ -23,10 +23,10 @@ class CreateFlatsTable extends Migration
             $table->string('address', 100)->nullable();
             $table->string('latitude', 20)->nullable();
             $table->string('longitude', 20)->nullable();
-            $table->tinyInteger('room_number')->unsigned()->nullable();
-            $table->tinyInteger('bed_number')->unsigned()->nullable();
-            $table->tinyInteger('bathroom_number')->unsigned()->nullable();
-            $table->smallInteger('square_meters')->unsigned()->nullable();
+            $table->tinyInteger('room_number')->unsigned()->nullable()->default(1);
+            $table->tinyInteger('bed_number')->unsigned()->nullable()->default(1);
+            $table->tinyInteger('bathroom_number')->unsigned()->nullable()->default(1);
+            $table->smallInteger('square_meters')->unsigned()->nullable()->default(1);
             $table->string('cover')->nullable();
             $table->string('cover_original_name')->nullable();
             $table->boolean('visible')->nullable();

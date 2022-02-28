@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1>edit</h1>
+        <h1>Modifica</h1>
 
         <form action="{{route('host.flats.update', $flat)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             {{-- titolo appartamento --}}
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title">Titolo</label>
                 <input name="title" id="title" cols="30" rows="5" type="text" 
                     class="form-control @error('title') is-invalid @enderror" 
                     value="{{old('title', $flat->title)}}"
@@ -23,7 +23,7 @@
             <div class="address-zone d-flex justify-content-between">
                 {{-- città appartamento --}}
                 <div class="form-group">
-                    <label for="city">City</label>
+                    <label for="city">Città</label>
                     <input type="text" 
                           class="form-control @error('city') is-invalid @enderror" 
                           value="{{old('city', $flat->city)}}" style="text-transform:capitalize"
@@ -35,7 +35,7 @@
 
                 {{-- provincia appartamento --}}
                 <div class="form-group">
-                    <label for="province">Province</label>
+                    <label for="province">Provincia</label>
                     <input type="text" 
                           class="form-control @error('province') is-invalid @enderror" 
                           value="{{old('province', $flat->province)}}" style="text-transform:capitalize"
@@ -47,7 +47,7 @@
 
                 {{-- indirizzo appartamento --}}
                 <div class="form-group">
-                    <label for="address">Address</label>
+                    <label for="address">Indirizzo</label>
                     <input type="text" 
                           class="form-control @error('address') is-invalid @enderror" 
                           value="{{old('address', $flat->address)}}" style="text-transform:capitalize"
@@ -64,7 +64,7 @@
                 <div class="info-zone d-flex ">
                     {{-- numero camere --}}
                     <div class="form-group mr-5">
-                        <label for="room_number">Room number</label>
+                        <label for="room_number">N° Stanze</label>
                         <input type="number" 
                             class="form-control @error('room_number') is-invalid @enderror" 
                             value="{{old('room_number', $flat->room_number)}}" min="1" max="25"
@@ -74,7 +74,7 @@
                         @enderror
                     </div>
                     <div class="form-group mr-5">
-                        <label for="bed_number">Bed number</label>
+                        <label for="bed_number">N° Letti</label>
                         <input type="number" 
                             class="form-control @error('bed_number') is-invalid @enderror" 
                             value="{{old('bed_number', $flat->bed_number)}}" min="1" max="25"
@@ -84,7 +84,7 @@
                         @enderror
                     </div>
                     <div class="form-group mr-5">
-                        <label for="bathroom_number">Bathroom number</label>
+                        <label for="bathroom_number">N° Bagni</label>
                         <input type="number" 
                             class="form-control @error('bathroom_number') is-invalid @enderror" 
                             value="{{old('bathroom_number', $flat->bathroom_number)}}" min="1" max="25"
@@ -94,10 +94,10 @@
                         @enderror
                     </div>
                     <div class="form-group mr-5">
-                        <label for="square_meters">Square Meters</label>
+                        <label for="square_meters">Metri Quadri</label>
                         <input type="number" 
                             class="form-control @error('square_meters') is-invalid @enderror" 
-                            value="{{old('square_meters',$flat->square_meters)}}" min="1" max="25"
+                            value="{{old('square_meters',$flat->square_meters)}}" min="1" max="32000"
                             id="square_meters"  name="square_meters" placeholder="1"> 
                         @error('square_meters')
                             <p class="invalid-feedback">{{$message}}</p>
@@ -112,7 +112,7 @@
                 <input type="file" class="btn btn-primary" name="cover" id="cover">
             </div>
 
-            <button type="submit" class="btn btn-warning">Edit</button>
+            <button type="submit" class="btn btn-warning">Salva</button>
             <button type="reset" class="btn btn-danger" >Reset</button>
             
         </form>

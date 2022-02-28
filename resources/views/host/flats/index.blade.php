@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         
-        @if ($flats)
+        @if (empty($flats))
             <h1>I tuoi appartamenti</h1>
         @else
             <h1>Non hai registrato ancora nessun appartamento</h1>   
