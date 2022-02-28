@@ -5,6 +5,8 @@
 
 <div id="app">
 
+  
+
 </div>
 <script src="js/guest.js"></script>
 
