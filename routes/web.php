@@ -28,3 +28,8 @@ Route::middleware('auth')
             Route::get('/','HomeController@index')->name('index');
             Route::resource('/flats','FlatController');
         });
+
+        Route::get("{any?}", function(){
+            return view('guest.welcome');
+        })->where('any', '.*')->name('home');
+        

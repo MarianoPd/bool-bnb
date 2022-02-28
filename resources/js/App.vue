@@ -1,15 +1,20 @@
 <template>
-  <div>
-    <Main />
-  </div>
+
+<div>
+  <main>
+    <router-view></router-view>
+  </main>
+    <Footer />
+</div>
+  
 </template>
 
 <script>
-import Main from './components/Main.vue'
+import Footer from './components/Footer.vue'
 export default {
  name: 'App',
  components: {
-   Main,
+   Footer,
  }
 }
 </script>

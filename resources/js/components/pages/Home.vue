@@ -4,7 +4,6 @@
     <div class="carousel">
       <img :src="houses[counter]" alt="">
     </div>
-
     <div class="nav-bar d-flex">
         <div class="container">
           <div class="row">
@@ -31,9 +30,6 @@
           </div>
         </div>
       </div>
-
-
-
     <div class="text-home">
       <div>
         <span @click="isActive = !isActive" class="mx-3">
@@ -48,9 +44,7 @@
         <div class="mx-3 btn btn-outline-light">Advanced</div>
         <div class="btn btn-outline-light">Premium</div>
       </div>
-      
     </div>
-
   </section>
 
 </template>
