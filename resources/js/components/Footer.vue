@@ -1,8 +1,8 @@
 <template>
 
   <footer class="d-flex justify-content-between">
-    <div>BollBnB - Made By SS</div>
-    <div>Palermo - Italy</div>
+    <div>BollBnB - Made By Team 2</div>
+    <div>Made in Italy</div>
   </footer>
 
 </template>

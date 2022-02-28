@@ -41,3 +41,8 @@
     </div>
     
 @endsection
+
+
+@section('title_page')
+- I tuoi alloggi
+@endsection

@@ -34,3 +34,7 @@
     </div>
     
 @endsection
+
+@section('title_page')
+- Alloggio
+@endsection

@@ -114,3 +114,8 @@
     </div>
     
 @endsection
+
+
+@section('title_page')
+- Aggiungi un nuovo allogio
+@endsection

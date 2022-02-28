@@ -14,3 +14,7 @@
 
 
 @endsection
+
+@section('title_page')
+Home
+@endsection
