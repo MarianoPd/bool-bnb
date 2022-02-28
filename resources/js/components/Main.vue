@@ -1,8 +1,8 @@
 <template>
 
   <main>
-    <Home />
-    <Footer />
+    <!-- <Home />
+    <Footer /> -->
     <!-- <Flats /> -->
     <!-- <About />  -->
   </main>
@@ -10,10 +10,9 @@
 </template>
 
 <script>
-import Home from './Home.vue'
-import Flats from './Flats.vue'
-import About from './About.vue'
-import Footer from './Footer.vue'
+// import Home from './pages/Home.vue'
+// import Flats from './pages/Flats.vue'
+// import About from './pages/About.vue'
 export default {
   name: 'Main',
   components:{
