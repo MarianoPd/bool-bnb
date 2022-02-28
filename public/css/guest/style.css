@@ -10963,44 +10963,6 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  z-index: 99;
-  width: 100%;
-}
-
-header .active::after {
-  content: "";
-  display: block;
-  border: 1px solid white;
-}
-
-header .logo {
-  width: 115px;
-  height: 75px;
-}
-
-header .logo img {
-  width: 100%;
-  height: 100%;
-}
-
-header a {
-  color: white !important;
-  text-decoration: none !important;
-}
-
-header a h6 {
-  color: white;
-  transition: all 0.5s;
-}
-
-header a h6:hover {
-  color: #eeeeee;
+  background-color: aqua;
 }
 
