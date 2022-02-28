@@ -10962,9 +10962,22 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
 header {
-  background-color: black;
-  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+header .active::after {
+  content: "";
+  display: block;
+  border: 1px solid white;
 }
 
 header .logo {
@@ -10978,29 +10991,16 @@ header .logo img {
 }
 
 header a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+header a h6 {
   color: white;
+  transition: all 0.5s;
 }
 
-main {
-  height: calc(100vh - 80px);
-}
-
-main .jumbo-structure {
-  color: white;
-  background-color: black;
-}
-
-main .jumbo-structure .jumbo {
-  position: relative;
-  height: 800px;
-  background-image: url("/img/jumbo1.webp");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-main .jumbo-structure .jumbo .text {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
+header a h6:hover {
+  color: #eeeeee;
 }
 

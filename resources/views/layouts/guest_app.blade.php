@@ -11,22 +11,21 @@
     <header class="container-fluid d-flex align-items-center">
         <div class="container">
             <div class="row justify-content-between align-items-baseline">
-                <div class="logo">
+                <div class="logo d-flex justify-content-center align-items-center">
                     <a href="#">
-                        <img src="https://starpng.com/public/uploads/preview/airbnb-logo-airbnb-logo-white-on-black-png-image-transparent-101576586899a2xgsawyyh.png" alt="">
+                        <span>BoolBnB</span>
                     </a>
                 </div>
                 <div class="d-flex">
-                    <a href="#">
-                        <h6>Alloggi</h6>
+                    <a class="{{ Route::currentRouteNamed('')? 'active' : '' }}"  href="#">
+                        <h6 class="active">Home</h6>
                     </a>
-                    <a class="mx-5" href="#">
-                        <h6>Esperienze</h6>
+                    <a class="{{ Route::currentRouteNamed('')? 'active' : '' }} mx-5"  href="#">
+                        <h6>Flats</h6>
                     </a>
-                    <a href="#">
-                        <h6>Esperienze online</h6>
+                    <a class="{{ Route::currentRouteNamed('')? 'active' : '' }}"  href="#">
+                        <h6>About</h6>
                     </a>
-                    
                 </div>
                 <div>
                     @if (Route::has('login'))
@@ -34,10 +33,10 @@
                         @auth
                             <a href="{{ url('/host') }}">Home</a>
                         @else
-                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('login') }}">Accedi</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
+                                <a href="{{ route('register') }}">Registrati</a>
                             @endif
                         @endauth
                     </div>

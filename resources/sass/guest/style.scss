@@ -1,10 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-header{
-    background-color: black;
-    height: 80px;
 
+
+body{
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    color: white;
+}
+
+// Questo Header si trova all'interno di guest_app.blade.php
+header{
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+
+    .active{
+       &::after{
+        content: '';
+        display: block;
+        border: 1px solid white;
+        }
+ 
+    }
+    
+    
     .logo{
         width: 115px;
         height: 75px;
@@ -14,34 +34,18 @@ header{
             height: 100%;
         }
     }
-
     a{
-        color: white;
-
+        color: white !important;
+        text-decoration: none !important;
         
-    }
-}
+        h6{
+            color: white;
+            transition: all 0.5s;
 
-main{
-    height: calc(100vh - 80px);
-    .jumbo-structure{
-        color: white;
-        background-color: black;
-
-        .jumbo{
-            position: relative;
-            //border: 1px solid white;
-            height: 800px;
-            background-image: url('/img/jumbo1.webp');
-            background-repeat: no-repeat;
-            background-size: contain;
-
-            .text{
-                position: absolute;
-                bottom: 0;
-                left: 50%;
+            &:hover{
+                color: rgb(238, 238, 238);
             }
-
         }
     }
 }
+
