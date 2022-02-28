@@ -10,10 +10,10 @@
             {{-- titolo appartamento --}}
             <div class="form-group">
                 <label for="title">Title</label>
-                <textarea name="title" id="title" cols="30" rows="5" type="text" 
+                <input name="title" id="title" cols="30" rows="5" type="text" 
                     class="form-control @error('title') is-invalid @enderror" 
                     value="{{old('title')}}"
-                    id="title"  name="title" placeholder="Describe your flat..."></textarea>
+                    id="title"  name="title" placeholder="Describe your flat...">
                 @error('title')
                     <p class="invalid-feedback">{{$message}}</p>
                 @enderror
