@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Flat;
+use App\Service;
 use App\User;
 
 
@@ -34,8 +35,8 @@ class FlatController extends Controller
      */
     public function create()
     {
-        //da passare anche la lista dei servizi
-        return view('host.flats.create');
+        $services = Service::all();
+        return view('host.flats.create', compact('services'));
     }
 
     /**
@@ -68,12 +69,13 @@ class FlatController extends Controller
         $new_flat = new Flat;
         $new_flat->fill($data);
         $new_flat['user_id'] = Auth::user()->getAuthIdentifier();
-
         
-        
-
         $new_flat->save();
-        
+
+        if(array_key_exists('services', $data)){
+            $new_flat->services()->attach($data['services']);
+        };
+            
         return redirect()->route('host.flats.show', $new_flat->slug);
         
     }
@@ -106,9 +108,10 @@ class FlatController extends Controller
     public function edit($id)
     {
         $flat = Flat::find($id); 
-        
+        $services = Service::all();
+
         if($flat){
-            return view('host.flats.edit', compact('flat') );
+            return view('host.flats.edit', compact('flat', 'services') );
         }
         abort(404, 'Flat not found in the database');
     }
@@ -148,6 +151,12 @@ class FlatController extends Controller
         };
 
         $flat->update($data);
+
+        if(array_key_exists('services', $data)){
+            $flat->services()->sync($data['services']);
+        }else{
+            $flat->services()->detach();
+        }
 
         return redirect()->route('host.flats.show', $flat->slug);
     }
@@ -190,7 +199,7 @@ class FlatController extends Controller
             
             'city.required' => "Indicare la città",
             'city.min' => "Nome città minore di :min caratteri",
-            'city.min' => "Nome città maggiore di :max caratteri",
+            'city.max' => "Nome città maggiore di :max caratteri",
 
             'province.required' => "Indicare la sigla della provincia",
             'province.min' => "Sigla provincia minore di :min caratteri",
