@@ -2,7 +2,7 @@
 window.Vue = require('vue');
 
 
-Vue.component('header-component', require('./components/Header.vue').default);
+//Vue.component('header-component', require('./components/Header.vue').default);
 
 import App from './App.vue';
 
@@ -11,3 +11,4 @@ const app = new Vue({
     render: h => h(App),
 
 });
+
