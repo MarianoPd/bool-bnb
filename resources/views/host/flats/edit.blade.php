@@ -68,7 +68,7 @@
                         <input type="number" 
                             class="form-control @error('room_number') is-invalid @enderror" 
                             value="{{old('room_number', $flat->room_number)}}" min="1" max="25"
-                            id="room_number"  name="room_number" placeholder="1"> 
+                            id="room_number"  name="room_number" placeholder="-"> 
                         @error('room_number')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
@@ -78,7 +78,7 @@
                         <input type="number" 
                             class="form-control @error('bed_number') is-invalid @enderror" 
                             value="{{old('bed_number', $flat->bed_number)}}" min="1" max="25"
-                            id="bed_number"  name="bed_number" placeholder="1"> 
+                            id="bed_number"  name="bed_number" placeholder="-"> 
                         @error('bed_number')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
@@ -88,7 +88,7 @@
                         <input type="number" 
                             class="form-control @error('bathroom_number') is-invalid @enderror" 
                             value="{{old('bathroom_number', $flat->bathroom_number)}}" min="1" max="25"
-                            id="bathroom_number"  name="bathroom_number" placeholder="1"> 
+                            id="bathroom_number"  name="bathroom_number" placeholder="-"> 
                         @error('bathroom_number')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
@@ -98,7 +98,7 @@
                         <input type="number" 
                             class="form-control @error('square_meters') is-invalid @enderror" 
                             value="{{old('square_meters',$flat->square_meters)}}" min="1" max="32000"
-                            id="square_meters"  name="square_meters" placeholder="1"> 
+                            id="square_meters"  name="square_meters" placeholder="-"> 
                         @error('square_meters')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
@@ -109,6 +109,7 @@
 
             <div class="mb-5">
                 <label for="cover">Immagine</label>
+                <br>
                 <input type="file" class="btn btn-primary" name="cover" id="cover">
             </div>
 

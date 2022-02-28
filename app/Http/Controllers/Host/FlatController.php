@@ -74,7 +74,7 @@ class FlatController extends Controller
 
         $new_flat->save();
         
-        return redirect()->route('host.flats.show', $new_flat);
+        return redirect()->route('host.flats.show', $new_flat->slug);
         
     }
 
@@ -84,10 +84,11 @@ class FlatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //dd($id);
-        $flat = Flat::find($id); 
+        $flat = Flat::where('slug',$slug)->first();
+        
         
         if($flat){
             return view('host.flats.show', compact('flat') );
@@ -148,7 +149,7 @@ class FlatController extends Controller
 
         $flat->update($data);
 
-        return redirect()->route('host.flats.show', $flat);
+        return redirect()->route('host.flats.show', $flat->slug);
     }
 
     /**
@@ -171,13 +172,12 @@ class FlatController extends Controller
         return [
             'title' => "required|min:3|max:100",
             'city' => "required|min:2|max:45",
-            'province' => "nullable|min:2|max:3",
-            'address' => "nullable|min:2|max:100",
-            'address' => "nullable|min:2|max:100",
-            'room_number' => "nullable|numeric|min:1|max:120",
-            'bed_number' => "nullable|numeric|min:1|max:120",
-            'bathroom_number' => "nullable|numeric|min:1|max:120",
-            'square_meters' => "nullable|numeric|min:1|max:32000",
+            'province' => "required|min:2|max:3",
+            'address' => "required|min:2|max:100",
+            'room_number' => "required|numeric|min:1|max:120",
+            'bed_number' => "required|numeric|min:1|max:120",
+            'bathroom_number' => "required|numeric|min:1|max:120",
+            'square_meters' => "required|numeric|min:1|max:32000",
 
         ];
     }
@@ -187,6 +187,34 @@ class FlatController extends Controller
             'title.required' => "Inserire un titolo dell'annuncio",
             'title.min' => "Titolo troppo breve",
             'title.max' => "Titolo più lungo di :max caratteri",
+            
+            'city.required' => "Indicare la città",
+            'city.min' => "Nome città minore di :min caratteri",
+            'city.min' => "Nome città maggiore di :max caratteri",
+
+            'province.required' => "Indicare la sigla della provincia",
+            'province.min' => "Sigla provincia minore di :min caratteri",
+            'province.max' => "Sigla provincia maggiore di :max caratteri",
+            
+            'address.required' => "Indicare l'indirizzo",
+            'address.min' => "Indirizzo minore di :min caratteri",
+            'address.max' => "Indirizzo maggiore di :max caratteri",
+
+            'room_number.required' => "Indicare il numero delle stanze",
+            'room_number.min' => "Numero stanze minore di :min",
+            'room_number.max' => "Numero stanze maggiore di :max ",
+            
+            'bed_number.required' => "Indicare il numero dei letti",
+            'bed_number.min' => "Numero letti minore di :min",
+            'bed_number.max' => "Numero letti maggiore di :max ",
+            
+            'bathroom_number.required' => "Indicare il numero dei bagni",
+            'bathroom_number.min' => "Numero bagni minore di :min",
+            'bathroom_number.max' => "Numero bagni maggiore di :max ",
+            
+            'square_meters.required' => "Indicare il numero di metri quadri",
+            'square_meters.min' => "Numero metri quadri minore di :min",
+            'square_meters.max' => "Numero metri quadri maggiore di :max ",
         ];
     }
 
