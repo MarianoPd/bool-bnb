@@ -33,10 +33,11 @@
                         @auth
                             <a href="{{ url('/host') }}">Home</a>
                         @else
-                            <a href="{{ route('login') }}">Accedi</a>
-                            @if (Route::has('register'))
+                            <a href="{{ route('login') }}">Diventa Host</a>
+
+                            {{-- @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Registrati</a>
-                            @endif   
+                            @endif    --}}
                         @endauth
                     </div>
                     @endif
@@ -47,4 +48,3 @@
     @yield('guest_content')
 </body>
 </html>
-
