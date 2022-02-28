@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Flat;
 use App\User;
 
-use Illuminate\Support\Facades\Storage;
+
 
 class FlatController extends Controller
 {
@@ -130,16 +130,6 @@ class FlatController extends Controller
             $data['slug'] = Flat::getSlug($data['title']);
         }
         
-
-        if(array_key_exists('cover', $data)){
-            if($data['cover'] != $flat->cover){
-                $data['cover_original_name'] = $request->file('cover')->getClientOriginalName();
-                $image_path = Storage::put('uploads', $data['cover']);
-                Storage::delete($data['cover']);
-                $data['cover'] = $image_path;
-            }
-            
-        }    
         
 
         // controllo input image
