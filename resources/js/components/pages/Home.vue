@@ -33,7 +33,7 @@
     <div class="text-home">
       <div>
         <span @click="isActive = !isActive" class="mx-3">
-          BOOK A ROOM
+           <a href="http://127.0.0.1:8000/login">BOOK A ROOM</a>
         </span>
       </div>
       <div 

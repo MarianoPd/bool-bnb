@@ -17,13 +17,14 @@
                     </a>
                 </div>
                 <div class="d-flex">
-                    <a class="{{ Route::currentRouteNamed('')? 'active' : '' }}"  href="http://127.0.0.1:8000/">
-                        <h6 class="active">Home</h6>
+                    <a class="{{ Request::url() === "http://127.0.0.1:8000" ? 'active' : '' }}"  href="http://127.0.0.1:8000/">
+                        
+                        <h6>Home</h6>
                     </a>
-                    <a class="{{ Route::currentRouteNamed('')? 'active' : '' }} mx-5"  href="http://127.0.0.1:8000/appartamenti">
+                    <a class="{{ Request::url() === "http://127.0.0.1:8000/appartamenti"? 'active' : '' }} mx-5"  href="http://127.0.0.1:8000/appartamenti">
                         <h6>Flats</h6>
                     </a>
-                    <a class="{{ Route::currentRouteNamed('')? 'active' : '' }}"  href="http://127.0.0.1:8000/chi-siamo">
+                    <a class="{{ Request::url() === "http://127.0.0.1:8000/chi-siamo"? 'active' : '' }}"  href="http://127.0.0.1:8000/chi-siamo">
                         <h6>About</h6>
                     </a>
                 </div>

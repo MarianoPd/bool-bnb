@@ -126,6 +126,12 @@
                 @endforeach 
             </div>
 
+            @if ($flat->cover)
+
+                <h3>{{$flat->cover_original_name}} </h3>
+                {{-- <img src="{{asset('storage/' . $flat->cover)}}" alt="{{$flat->cover_original_name}}"> --}}
+            @endif
+
             <div class="mb-5">
                 <label for="cover">Immagine</label>
                 <br>

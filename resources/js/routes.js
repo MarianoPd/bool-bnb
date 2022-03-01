@@ -11,6 +11,9 @@ import About from './components/pages/About';
 
 const router = new VueRouter({
   mode: 'history',
+
+  linkExactActiveClass: 'active',
+
   routes: [
     {
       path: '/',
@@ -27,6 +30,11 @@ const router = new VueRouter({
       name: 'chi-siamo',
       component: About,
     },
+    {
+      path: '*',
+      name: 'error',
+      
+    }
 
   ]
   
