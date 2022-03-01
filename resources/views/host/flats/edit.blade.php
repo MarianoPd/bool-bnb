@@ -107,6 +107,31 @@
                 
             </div>
 
+            <div class="form-group">
+                <h5>Servizi</h5>
+                @foreach ($services as $service)
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" 
+                        name="services[]" id="service{{ $loop->iteration }}" value="{{ $service->id }}"
+                        @if(! $errors->any() && $flat->services->contains($service->id))
+                            checked
+                        @elseif ($errors->any() && in_array($service->id, old('services', [])))
+                            checked
+                        @endif>
+                        
+                        <label class="form-check-label" for="service{{ $loop->iteration }}">
+                            {{ $service->name }}
+                        </label>
+                    </div>
+                @endforeach 
+            </div>
+
+            @if ($flat->cover)
+
+                <h3>{{$flat->cover_original_name}} </h3>
+                {{-- <img src="{{asset('storage/' . $flat->cover)}}" alt="{{$flat->cover_original_name}}"> --}}
+            @endif
+
             <div class="mb-5">
                 <label for="cover">Immagine</label>
                 <br>
@@ -119,4 +144,8 @@
         </form>
     </div>
     
+@endsection
+
+@section('title_page')
+- Modifica alloggi
 @endsection

@@ -15,7 +15,11 @@
             <h5>Numero di letti: {{$flat->bathroom_number}}</h5>
             <h5>Numero di bagni: {{$flat->bed_number}}</h5>
             <h5>Metri quardi: {{$flat->square_meters}}</h5>
-
+            <ul>
+                @foreach ($flat->services as $service)
+                    <li>{{$service->name}}</li>
+                @endforeach
+            </ul>
             
 
             <button class="btn btn-info ">
@@ -33,4 +37,8 @@
         </div>
     </div>
     
+@endsection
+
+@section('title_page')
+- Alloggio
 @endsection

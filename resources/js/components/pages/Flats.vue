@@ -101,7 +101,33 @@
 
 <script>
 export default {
-  name: 'Flats'
+  name: 'Flats',
+  data(){
+    return{
+      flats: [],
+      baseUrl: 'http://127.0.0.1:8000',
+    }
+
+  },
+  methods:{
+    getFlats(){
+      //console.log(this.baseUrl + '/api/flats');
+
+      axios.get(this.baseUrl + '/api/flats')
+        .then(res =>{
+          //console.log(res.data);
+          this.flats = res.data;
+        })
+      
+    }
+  },
+
+  mounted(){
+    this.getFlats();
+  }
+
+
+
 }
 </script>
 

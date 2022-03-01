@@ -100,7 +100,21 @@
                     @error('square_meters')
                         <p class="invalid-feedback">{{$message}}</p>
                     @enderror
-                </div>
+                </div>                
+            </div>
+            <div class="form-group">
+                <h5>Servizi</h5>
+                @foreach ($services as $service)
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" 
+                        name="services[]" id="service{{ $loop->iteration }}" value="{{ $service->id }}"
+                        @if(in_array($service->id, old('services', []))) checked @endif>
+                        
+                        <label class="form-check-label" for="service{{ $loop->iteration }}">
+                            {{ $service->name }}
+                        </label>
+                    </div>
+                @endforeach 
             </div>
             <div class="mb-5">
                 <label for="cover">Immagine</label> 
@@ -113,4 +127,9 @@
         </form>
     </div>
     
+@endsection
+
+
+@section('title_page')
+- Aggiungi un nuovo allogio
 @endsection
