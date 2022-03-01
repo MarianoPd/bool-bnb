@@ -33,16 +33,9 @@
     <div class="text-home">
       <div>
         <span @click="isActive = !isActive" class="mx-3">
-          BOOK A ROOM
+          <a href="http://127.0.0.1:8000/appartamenti">BOOK A ROOM</a>
+          
         </span>
-      </div>
-      <div 
-        class="text-center level-home"
-        :class="{ active: isActive }"
-      >
-        <div class="btn btn-outline-light">Easy</div>
-        <div class="mx-3 btn btn-outline-light">Advanced</div>
-        <div class="btn btn-outline-light">Premium</div>
       </div>
     </div>
   </section>
@@ -62,7 +55,6 @@ export default {
         '/img/house5.jpg',
       ],
       counter: 0,
-      isActive: false
     }
   },
   methods: {
@@ -93,7 +85,6 @@ export default {
   
   .carousel{
     height: 100vh;
-    
   }
 
   img{
@@ -111,6 +102,11 @@ export default {
     transform: translateX(-50%);
     z-index: 98;
     
+    a{
+      color: white;
+      text-decoration: none;
+    }
+
     span{
       font-size: 50px;
       font-weight: 100;

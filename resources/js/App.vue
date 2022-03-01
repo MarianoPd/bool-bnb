@@ -1,6 +1,7 @@
 <template>
 
 <div>
+  <Header />
   <main>
     <router-view></router-view>
   </main>
@@ -10,11 +11,13 @@
 </template>
 
 <script>
-import Footer from './components/Footer.vue'
+import Header from './components/partials/Header.vue'
+import Footer from './components/partials/Footer.vue'
 export default {
  name: 'App',
  components: {
    Footer,
+   Header
  }
 }
 </script>
