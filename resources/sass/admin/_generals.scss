@@ -1,0 +1,54 @@
+@import 'variables';
+
+.t2-header{
+    height: 55px;
+    width: 100%;
+    box-shadow: 0  2px 7px rgba($color: #000000, $alpha: 0.7);
+}
+
+.t2-navbar{
+    background: $primary-color;
+    
+    a{
+        color: white !important;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+
+    .t2-dropdown{
+        background: $primary-color;
+        border: 0;
+        .t2-dropdown-item{
+            background: none;
+        }
+    }
+}
+
+.t2-main{
+    //background-color: aqua;
+    height: calc(100vh - 55px);
+    width: 100vw;
+    padding-top: 15vh;
+
+    .t2-section{
+        width: 100%;
+        height: 100%;
+        //background-color: chocolate;
+        
+        .t2-container{
+            margin-top: 200px;
+
+            
+        }
+        
+
+
+        
+    }
+}
+
+
+
