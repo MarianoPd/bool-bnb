@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BoolBnb</title>
+    <title>BoolBnb @yield('title_page')</title>
     <link rel="stylesheet" href="{{asset('css/guest/style.css')}}">
 </head>
 <body>
@@ -33,10 +33,11 @@
                         @auth
                             <a href="{{ url('/host') }}">Home</a>
                         @else
-                            <a href="{{ route('login') }}">Accedi</a>
-                            @if (Route::has('register'))
+                            <a href="{{ route('login') }}">Diventa Host</a>
+
+                            {{-- @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Registrati</a>
-                            @endif   
+                            @endif    --}}
                         @endauth
                     </div>
                     @endif
@@ -47,4 +48,3 @@
     @yield('guest_content')
 </body>
 </html>
-

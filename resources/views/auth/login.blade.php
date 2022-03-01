@@ -64,6 +64,12 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group row mb-0 mt-3">
+                            <div class="col-md-8 offset-md-4 d-flex">
+                                <p class="mr-2">Non ti sei ancora registrato?</p><a href="{{ route('register') }}">Registrati!</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

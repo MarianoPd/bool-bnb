@@ -120,3 +120,7 @@
     </div>
     
 @endsection
+
+@section('title_page')
+- Modifica alloggi
+@endsection
