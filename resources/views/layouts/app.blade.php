@@ -74,7 +74,7 @@
             </nav>
         </header>
 
-        <main class="t2-main">
+        <main class="t1-main mt-5">
             @yield('content')
         </main>
     </div>
