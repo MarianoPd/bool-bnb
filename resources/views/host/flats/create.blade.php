@@ -125,8 +125,7 @@
                         <label for="cover">Immagine</label> 
                         <br>
                         <input type="file" class="t2-button" name="cover" id="cover">
-                    </div>
-        
+                    </div>        
                     <button type="submit" class="t2-button">Crea</button>
                     <button type="reset" class="t2-button" >Reset</button>
                 </form>
