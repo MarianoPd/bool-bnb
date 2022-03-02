@@ -34,9 +34,11 @@ const router = new VueRouter({
     {
       path: '*',
       component: Error404,
-      
-    }
-
+    },
+    {
+      path: '/appartamenti%',
+      component: Error404,
+    },
   ]
   
 })
