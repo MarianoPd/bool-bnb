@@ -1,7 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mb-5">
+        <div class="button-zone mb-3">
+            {{-- bottone edi --}}
+            <button class="btn btn-info mr-3">
+                <a href="{{route('host.flats.edit', $flat)}}">Modifica appartamento</a>
+            </button>
+
+            {{-- Bottone torna alla lista appartamenti --}}
+            <button class="btn btn-warning ">
+                <a href="{{ route('host.flats.index')}}">I miei appartamenti</a>
+            </button>
+        </div>
+
         @if ($flat->cover)
             <div class="w-100">
                 <img src="{{asset('storage/'. $flat->cover)}}" alt="{{$flat->title}}" class="w-100">
@@ -20,11 +32,26 @@
                     <h3>{{$flat->title}}</h3>
                     <h5>Indirizzo: {{$flat->address}}, {{$flat->city}}, {{$flat->province}}</h5>
 
+
+                    @if (isset($flat->service, $flat))
+                        <h5>Servizi aggiuntivi:</h5>
+                        <ul>
+                            @foreach ($flat->services as $service)
+                            <li>{{$service->name}}</li>
+                            @endforeach
+                        </ul>  
+
+                    @else
+                        
+                        <h5>Nessun servizio aggiuntivo disponibile in questa casa</h5>
+                                
+                    @endif
+
                 </div>
 
+                {{-- quadrato con info dimensione casa --}}
                 <div class="info-house">
 
-                    {{-- quadrato con info dimensione casa --}}
                     <div class="container-square">
                         <div class="row row-cols-2 bg-white">
                             <div class="col-6 border">
@@ -57,28 +84,23 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             
-            <ul>
-                @foreach ($flat->services as $service)
-                    <li>{{$service->name}}</li>
-                @endforeach
-            </ul>
-            
 
-            <button class="btn btn-info ">
-                <a href="{{route('host.flats.edit', $flat)}}">EDIT</a>
-            </button>
+            {{-- bottone elimina --}}
             <form onsubmit="return confirm('Questa azione cancellerà definitivamente questo appartamento e tutti i sui dati. Sei sicuro di procedere?')"
             action="{{route('host.flats.destroy', $flat)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger mt-5">
-                    DELETE
+                    Elimina appartamento
                 </button>
             </form>
+
+            
+
+
 
         </div>
     </div>

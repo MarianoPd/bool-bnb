@@ -7,7 +7,7 @@
         
         <div class="row">
             <div class="col-6">
-                @if (!empty($flats))
+                @if (isset($flats))
                     <h1>I tuoi appartamenti</h1>
                 @else
                     <h1>Non hai registrato ancora nessun appartamento</h1>   
