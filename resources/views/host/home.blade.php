@@ -7,11 +7,12 @@
             <div class="col-md-8">
                 <div class="t2-card">
                     <div class="card-header">
+                        <i class="fa-solid fa-person-swimming"></i>
                         <h4 >
                             @if (Auth::user()->name)
                                 Ciao <strong>{{Auth::user()->name}}</strong> !
                             @else
-                                Ciao <strong>{{Auth::user()->email}}</strong>!
+                                Ciao <strong>{{Auth::user()->email}}</strong>! 
                             @endif
                             
                         </h4>
@@ -24,7 +25,7 @@
                             </div>
                         @endif
     
-                        {{ __('You are logged in!') }}
+                        
     
                         <div class="button-zone mt-4">
     
