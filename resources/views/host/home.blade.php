@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="">
+<section>
     <div class="container ">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -24,14 +24,14 @@
                             </div>
                         @endif
     
-                        {{ __('You are logged in!') }}
+                        Benvenuto nell'area Host!
     
                         <div class="button-zone mt-4">
     
                             <a type="button" class="t2-button "
-                            href="{{ route('host.flats.index')}}">Your flats</a>
-                            <a type="button" class="t2-button "
-                            href="{{ route('host.flats.create')}}">Add a flat</a>
+                            href="{{ route('host.flats.index')}}">I miei appartamenti</a>
+                            <a type="button" class="t2-button"
+                            href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
                             
                         </div>
                         

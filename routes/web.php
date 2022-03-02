@@ -29,7 +29,7 @@ Route::middleware('auth')
             Route::resource('/flats','FlatController');
         });
 
-        Route::get("{any?}", function(){
-            return view('guest.welcome');
-        })->where('any', '.*')->name('home');
-        
+
+Route::get("{any?}", function(){
+    return view('auth.login');
+})->where('any', '.*');
