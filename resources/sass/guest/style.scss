@@ -1,13 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-
-
-body{
-    //color: white;
-}
-
-// Questo Header si trova all'interno di guest_app.blade.php
 header{
     position: fixed;
     //position: absolute;
@@ -21,10 +14,7 @@ header{
         display: block;
         border: 1px solid white;
         }
- 
     }
-    
-    
     .logo{
         width: 115px;
         height: 75px;
@@ -48,6 +38,5 @@ header{
         }
     }
 
-    
 }
 

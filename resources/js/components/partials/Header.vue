@@ -1,5 +1,5 @@
 <template>
-  <header class="container-fluid d-flex align-items-center">
+  <header class="container-fluid d-flex align-items-center nav-bar">
         <div class="container">
             <div class="row justify-content-between align-items-baseline">
                 <div class="logo d-flex justify-content-center align-items-center">
@@ -24,8 +24,27 @@
 export default {
   name: 'Header'
 }
+
+{
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.nav-bar');
+        if(lastScrollY > 140){
+            navbar.classList.add("nav-hide");
+        } else{
+            navbar.classList.remove("nav-hide");
+        }
+
+        lastScrollY = window.scrollY;
+    });
+}
 </script>
 
 <style>
-
+    
+    .nav-hide{
+        background-color: black;
+        transition: 0.5s;
+    }
 </style>
