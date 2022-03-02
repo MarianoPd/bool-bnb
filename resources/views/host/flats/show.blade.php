@@ -33,7 +33,7 @@
                     <h5>Indirizzo: {{$flat->address}}, {{$flat->city}}, {{$flat->province}}</h5>
 
 
-                    @if (isset($flat->service, $flat))
+                    @if (!empty($flat->services))
                         <h5>Servizi aggiuntivi:</h5>
                         <ul>
                             @foreach ($flat->services as $service)
