@@ -13,7 +13,7 @@ class ServicesTableSeeder extends Seeder
     public function run()
     {
         $services = ['Piscina', 'Wifi', 'Lavastoviglie', 'Cucina', 'Self check-in', 'Parcheggio', 'Palestra', 'Aria condizionata', 'Riscaldamento'];
-
+        
         foreach($services as $service){
             $new_service = new Service();
             $new_service->name = $service;

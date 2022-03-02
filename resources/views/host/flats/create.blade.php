@@ -113,6 +113,7 @@
                         <label class="form-check-label" for="service{{ $loop->iteration }}">
                             {{ $service->name }}
                         </label>
+                        
                     </div>
                 @endforeach 
             </div>
@@ -121,7 +122,8 @@
                 <br>
                 <input type="file" class="btn btn-primary" name="cover" id="cover">
             </div>
-
+            <i class="fas fa-washer"></i>
+            <i class="fa-solid fa-washing-machine"></i>
             <button type="submit" class="btn btn-warning">Crea</button>
             <button type="reset" class="btn btn-danger" >Reset</button>
         </form>
