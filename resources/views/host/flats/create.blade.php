@@ -17,7 +17,7 @@
                         <label for="title">Titolo</label>
                         <input name="title" id="title" type="text" min="3" max="100"
                             class="t2-form-control @error('title') is-invalid @enderror" 
-                            value="{{old('title')}}"
+                            value="{{old('title')}}" required
                             id="title"  name="title" placeholder="Descrivi l'appartamento...">
                         @error('title')
                             <p class="invalid-feedback">{{$message}}</p>
@@ -29,7 +29,7 @@
                         {{-- città appartamento --}}
                         <div class="form-group col-12 col-sm-4">
                             <label for="city">Città</label>
-                            <input type="text" 
+                            <input type="text" required
                                   class="t2-form-control @error('city') is-invalid @enderror" 
                                   value="{{old('city')}}" style="text-transform:capitalize"
                                   id="city"  name="city" placeholder="Inserisci la città...">
@@ -41,7 +41,7 @@
                         {{-- provincia appartamento --}}
                         <div class="form-group col-12 col-sm-4">
                             <label for="province">Provincia</label>
-                            <input type="text" 
+                            <input type="text" required
                                   class="t2-form-control @error('province') is-invalid @enderror" 
                                   value="{{old('province')}}" style="text-transform:capitalize"
                                   id="province"  name="province" placeholder="Inserisci la provincia...">
@@ -53,7 +53,7 @@
                         {{-- indirizzo appartamento --}}
                         <div class="form-group col-12 col-sm-4">
                             <label for="address">Indirizzo</label>
-                            <input type="text" 
+                            <input type="text" required
                                   class="t2-form-control @error('address') is-invalid @enderror" 
                                   value="{{old('address')}}" style="text-transform:capitalize"
                                   id="address"  name="address" placeholder="Inserisci l'indirizzo...">
@@ -68,7 +68,7 @@
                         {{-- numero camere --}}
                         <div class="form-group col-6 col-sm-3">
                             <label for="room_number">N° Stanze</label>
-                            <input type="number" 
+                            <input type="number" required
                                 class="t2-form-control @error('room_number') is-invalid @enderror" 
                                 value="{{old('room_number')}}" min="1" max="25"
                                 id="room_number"  name="room_number" placeholder="-"> 
@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group col-6 col-sm-3">
                             <label for="bed_number">N° Letti</label>
-                            <input type="number" 
+                            <input type="number" required
                                 class="t2-form-control @error('bed_number') is-invalid @enderror" 
                                 value="{{old('bed_number')}}" min="1" max="25"
                                 id="bed_number"  name="bed_number" placeholder="-"> 
@@ -88,7 +88,7 @@
                         </div>
                         <div class="form-group col-6 col-sm-3">
                             <label for="bathroom_number">N° Bagni</label>
-                            <input type="number" 
+                            <input type="number" required
                                 class="t2-form-control @error('bathroom_number') is-invalid @enderror" 
                                 value="{{old('bathroom_number')}}" min="1" max="25"
                                 id="bathroom_number"  name="bathroom_number" placeholder="-"> 
@@ -98,7 +98,7 @@
                         </div>
                         <div class="form-group col-6 col-sm-3">
                             <label for="square_meters">Metri Quadri</label>
-                            <input type="number" 
+                            <input type="number" required
                                 class="t2-form-control @error('square_meters') is-invalid @enderror" 
                                 value="{{old('square_meters')}}" min="1" max="32000"
                                 id="square_meters"  name="square_meters" placeholder="-"> 

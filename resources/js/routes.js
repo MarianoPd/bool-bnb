@@ -36,7 +36,7 @@ const router = new VueRouter({
       component: Error404,
     },
     {
-      path: '/appartamenti%',
+      path: '/appartamenti/%',
       component: Error404,
     },
   ]

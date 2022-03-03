@@ -5,7 +5,7 @@
     <section class="flats">
       <div class="video-container">
         <video autoplay muted loop>
-          <source src="/img/video2.mp4" type="video/mp4">
+          <source src="/img/video3.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
       </div>
