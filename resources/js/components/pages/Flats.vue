@@ -1,17 +1,19 @@
 <template>
 
-  <div>
-  <section class="flats">
-    <div class="video-container">
-      <video autoplay muted loop>
-        <source src="/img/video3.mp4" type="video/mp4">
-      </video>
-      <div class="overlay"></div>
-    </div>
-    <h1>Appartamenti</h1>
-  </section>
 
-  <Card />
+  <div class="content">
+    <section class="flats">
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source src="/img/video2.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+      </div>
+      <h1>Appartamenti</h1>
+    </section>
+
+
+    <Card />
   </div>
   
 
@@ -47,6 +49,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.content{
+  margin-bottom: 50px;
+}
+
 .flats{
   display: flex;
   justify-content: center;

@@ -11,6 +11,7 @@
         color: white;
         text-decoration: none;
         background-color: $primary-color;
+        transition: all 0.3s;
         //box-shadow: 0  1px 4px rgba($color: #000000, $alpha: 0.7);
     }
 }
@@ -23,4 +24,24 @@
 
 .t2-form-control{
     border-radius: 20px;
+
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color: $primary-color;
+
+}
+
+.container-card{
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-square{
+    width: 30vw;
+
 }

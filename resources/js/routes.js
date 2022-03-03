@@ -7,6 +7,7 @@ Vue.use(VueRouter);
 import Home from './components/pages/Home';
 import Flats from './components/pages/Flats';
 import About from './components/pages/About';
+import Error404 from './components/pages/Error404.vue';
 
 
 const router = new VueRouter({
@@ -32,10 +33,12 @@ const router = new VueRouter({
     },
     {
       path: '*',
-      name: 'error',
-      
-    }
-
+      component: Error404,
+    },
+    {
+      path: '/appartamenti%',
+      component: Error404,
+    },
   ]
   
 })
