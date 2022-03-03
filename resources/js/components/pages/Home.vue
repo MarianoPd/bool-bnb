@@ -14,7 +14,9 @@
               <input type="text" placeholder="Dove vuoi andare?">
             </div>
             <div class="col-1 offset-3 box p-0">
-              <div class="search"></div>
+              <div class="search d-flex justify-content-center align-items-center bg-dark">
+                <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </div>
