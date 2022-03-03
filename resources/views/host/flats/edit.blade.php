@@ -131,9 +131,11 @@
                     <div class="mb-5">
                         <label for="cover">Immagine</label>
                         <br>
+                        @if ($flat->cover)        
                         <div class="w-100">
                             <img width="200" src="{{asset('storage/' . $flat->cover)}}" alt="{{$flat->cover_original_name}}">
-                        </div>      
+                        </div>    
+                        <p>{{$flat->cover_original_name}} </p>
                         @endif
 
                         <input type="file" class="t2-button" name="cover" id="cover">
