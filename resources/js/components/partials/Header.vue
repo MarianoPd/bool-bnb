@@ -30,7 +30,7 @@ export default {
 
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.nav-bar');
-        if(lastScrollY > 140){
+        if(lastScrollY > 242){
             navbar.classList.add("nav-hide");
         } else{
             navbar.classList.remove("nav-hide");

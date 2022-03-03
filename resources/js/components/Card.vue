@@ -37,7 +37,7 @@
         <div class="col-4 d-flex flex-column align-items-center">
           <h2>A partire da</h2>
           <h2>250$</h2>
-          <div class="btn btn-outline-dark">More Info</div>
+          <div @click="isActive = true" class="btn btn-outline-dark">More Info</div>
         </div>
       </div>
 
@@ -55,7 +55,7 @@
         <div class="col-4 d-flex flex-column align-items-center">
           <h2>A partire da</h2>
           <h2>250$</h2>
-          <div class="btn btn-outline-dark">More Info</div>
+          <div @click="isActive = true" class="btn btn-outline-dark">More Info</div>
         </div>
       </div>
 
@@ -73,20 +73,49 @@
         <div class="col-4 d-flex flex-column align-items-center">
           <h2>A partire da</h2>
           <h2>250$</h2>
-          <div class="btn btn-outline-dark">More Info</div>
+          <div @click="isActive = true" class="btn btn-outline-dark">More Info</div>
         </div>
       </div>
+
+      
+      <Popup 
+        class="notVisible" 
+        :class="{ active: isActive }" 
+        @closePopup = "notActive" 
+      />
+      
     </div>
 
   </section>
 </template>
 
 <script>
+import Popup from './Popup.vue'
 export default {
-  name: 'Card'
+  name: 'Card',
+  components: {
+    Popup
+  },
+  data(){
+    return{
+      isActive: false,
+    }
+  },
+  methods: {
+   notActive(){
+     this.isActive = false;
+   }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+
+.notVisible{
+  display: none;
+}
+.active{
+    display: block;
+  }
 
 </style>

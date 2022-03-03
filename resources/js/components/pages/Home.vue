@@ -65,7 +65,7 @@ export default {
     }
   },
   methods: {
-    carousel(){
+    carouselPopUp(){
       this.counter++;
       if(this.counter > this.houses.length -1){
         this.counter = 0;
@@ -73,7 +73,7 @@ export default {
     },
   },
   mounted(){
-    setInterval(this.carousel, 4000);
+    setInterval(this.carouselPopUp, 4000);
   }
 }
 
