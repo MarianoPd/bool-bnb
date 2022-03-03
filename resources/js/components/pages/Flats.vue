@@ -12,9 +12,34 @@
       <h1>Appartamenti</h1>
       
     </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 border-bottom">
+          <h1 class="my-3">I nostri Appartamenti</h1>
+        </div>
+      </div>
+
+        <div class="row mt-5 border-bottom">
+          <div class="col-3 border">
+            <div class="py-2">Check-In</div>
+          </div>
+          <div class="col-3 border">
+            <div class="py-2">Check-Out</div>
+          </div>
+          <div class="col-3 border">
+            <div class="py-2">Persone</div>
+          </div>
+          <div class="col-3 btn btn-outline-dark border">
+            <div class="py-2">
+              Cerca
+            </div>
+          </div>
+        </div>
+    </div>
 
 
-    <Card />
+    <Card 
+    :flats="flats"/>
       <!-- prova mappa -->
       <input type="text" id="query" value="">
       <button onclick="search()">
@@ -39,6 +64,7 @@ export default {
       baseUrl: 'http://127.0.0.1:8000',
     }
   },
+
   methods:{
     getFlats(){
       axios.get(this.baseUrl + '/api/flats')
@@ -47,7 +73,6 @@ export default {
       });
     }
   },
-
   mounted(){
     this.getFlats();
   }
