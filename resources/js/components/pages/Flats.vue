@@ -16,6 +16,10 @@
 
     <Card />
       <!-- prova mappa -->
+      <input type="text" id="query" value="">
+      <button onclick="search()">
+        SEARCH
+      </button>
       <div id="map-div"></div>
   </div>
   
