@@ -24,9 +24,14 @@
         <header class="t2-header">
             <nav class="navbar navbar-expand-md navbar-light shadow-sm t2-navbar">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        BoolBnb
-                    </a>
+                    <div>
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            BoolBnb
+                        </a>
+                        <a href="{{ route('host.index') }}">
+                            Host homepage
+                        </a>
+                    </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -42,11 +47,11 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">Accedi</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                                     </li>
                                 @endif
                             @else
