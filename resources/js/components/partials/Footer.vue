@@ -1,9 +1,9 @@
 <template>
 
-  <footer class="d-flex justify-content-between">
+  <!-- <footer class="d-flex justify-content-between">
     <div>BollBnB - Made By Team 2</div>
     <div>Made in Italy</div>
-  </footer>
+  </footer> -->
 
 </template>
 

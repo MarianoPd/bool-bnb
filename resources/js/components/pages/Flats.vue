@@ -4,7 +4,7 @@
   <section class="flats">
     <div class="video-container">
       <video autoplay muted loop>
-        <source src="/img/video2.mp4" type="video/mp4">
+        <source src="/img/video3.mp4" type="video/mp4">
       </video>
       <div class="overlay"></div>
     </div>
@@ -13,6 +13,7 @@
 
   <Card />
   </div>
+  
 
 </template>
 
@@ -31,10 +32,8 @@ export default {
   },
   methods:{
     getFlats(){
-      //console.log(this.baseUrl + '/api/flats');
       axios.get(this.baseUrl + '/api/flats')
       .then(res =>{
-        //console.log(res.data);
         this.flats = res.data;
       });
     }
@@ -56,11 +55,10 @@ export default {
   overflow: hidden;
   width: 100%;
   //height: 100vh;
-  height: 550px;
+  height: 700px;
   color: black;
 
   h1{
-    // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     font-size: 6rem;
     z-index: 1;
@@ -83,14 +81,5 @@ export default {
       background-color: rgba($color: #000000, $alpha: 0.1);
     }
   }
-
-  .popup{
-    width: 800px;
-    height: 600px;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
-  
-  
 }
 </style>
