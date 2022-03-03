@@ -10,25 +10,11 @@
     <div class="nav-bar d-flex"> 
         <div class="container">
           <div class="row">
-            <div class="col-3 box">
-              <div>
-                <span>Dove</span>
-              </div>
+            <div class="col-8 box p-0 border-right d-flex align-items-center">
+              <input type="text" placeholder="Dove vuoi andare?">
             </div>
-            <div class="col-3 box">
-              <div>
-                <span>Numero Stanze</span>
-              </div>
-            </div>
-            <div class="col-3 box">
-              <div>
-                <span>Numero Letti</span>
-              </div>
-            </div>
-            <div style="border:none;" class="col-3 box">
-              <div>
-                <span>Aggiungi ospiti</span>
-              </div>
+            <div class="col-1 offset-3 box p-0">
+              <div class="search"></div>
             </div>
           </div>
         </div>
@@ -81,20 +67,89 @@ export default {
 
 <style lang="scss" scoped>
 .home{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   
   .carousel{
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
     height: 100vh;
+
+    img{
+      width: 100%;
+      height: 100%;
+      opacity: 0.95;
+      object-fit: cover;
+      object-position: center;
+    }
+    .overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+
+  .nav-bar{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 10px 20px;
+    border-radius: 40px;
+    background-color: white;
+    box-shadow: 0px 10px 25px rgba($color: #000000, $alpha: 0.2);
+    transition: 0.5s;
+
+    &:hover{
+      cursor: pointer;
+      box-shadow: 0px 10px 25px rgba($color: #000000, $alpha: 0.2);
+    }
+
+    .box{
+      color: black;
+      //border-right: 1px solid lightgray;
+      //border-radius: 40px;
+      //border: 1px solid lightgray;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+    }
+
+    input{
+      border: none;
+      box-sizing: border-box;
+      text-decoration: none;
+      width: 100%;
+      border-radius: 40px;
+      padding-left: 15px !important;
+
+      &:hover{
+        cursor: pointer;
+      }
+      
+    }
+
+    .search{
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
   }
 
   h1{
@@ -102,24 +157,6 @@ export default {
     font-size: 5rem;
     z-index: 1;
   }
-
-  img{
-    width: 100%;
-    height: 100%;
-    opacity: 0.95;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .overlay{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba($color: #000000, $alpha: 0.2);
-  }
-
   .text-home{
     border-radius: 2px;
     z-index: 1;
@@ -137,7 +174,6 @@ export default {
       cursor: pointer;
       transition: 0.5s;
 
-
       &:hover{
         text-shadow: 0 0 5px black;
       }
@@ -152,39 +188,6 @@ export default {
     }
 
   }
-
-    .nav-bar{
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 50px;
-    border-radius: 30px;
-    background-color: white;
-    box-shadow: 0px 10px 25px rgba($color: #000000, $alpha: 0.2);
-    transition: 0.5s;
-
-
-    &:hover{
-      cursor: pointer;
-      box-shadow: 0px 10px 25px rgba($color: #000000, $alpha: 0.2);
-
-      
-    }
-
-    .box{
-      color: black;
-      border-right: 1px solid lightgray;
-    }
-    
-    
-  }
-
-
-
 
 }
 </style>
