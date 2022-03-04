@@ -4,7 +4,7 @@
 
       <div 
         v-for="(flat, index) in flats" :key="index"
-        class="row border-bottom mt-5">
+        class="row border-bottom mt-3 pb-3">
       
         <!-- v-for="flat in flats" :key="`categ${flat.id}`" -->
 
