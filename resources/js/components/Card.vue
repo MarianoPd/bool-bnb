@@ -2,15 +2,12 @@
   <section class="card">
     <div class="container">
 
-      <div 
-        v-for="(flat, index) in flats" :key="index"
-        class="row border-bottom mt-3 pb-3">
-      
+      <div class="row border-bottom mt-3 pb-3">
         <!-- v-for="flat in flats" :key="`categ${flat.id}`" -->
 
         <div class="col-4">
           <div class="">
-            <img :src="flat.cover" alt="Foto non disponibile">
+            <!-- <img :src="flat.cover" alt="Foto non disponibile"> -->
           </div>
         </div>
 
@@ -34,7 +31,7 @@
         class="notVisible" 
         :class="{ active: isActive }" 
         @closePopup = "notActive" 
-      />
+        :flat="flat"/>
       
     </div>
 
@@ -49,7 +46,7 @@ export default {
     Popup
   },
   props:{
-    'flats': Array
+    'flat': Object
   },
   data(){
     return{

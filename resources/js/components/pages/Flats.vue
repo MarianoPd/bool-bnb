@@ -39,7 +39,10 @@
 
 
     <Card 
-    :flats="flats"/>
+    v-for="flat in flats"
+    :key="`flat${flat.id}`"
+    :flat="flat"/>
+
       <!-- prova mappa -->
       <input type="text" id="query" value="">
       <button onclick="search()">
