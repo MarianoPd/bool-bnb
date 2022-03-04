@@ -23,7 +23,20 @@
           <p>Ti presentiamo il team che ha sviluppato dalla A alla Z questo progetto.</p>
           <p>Faremo un po' il giro d'Italia insieme, partiremo dalla Sicilia dove incontreremo Mariano Pidone e Salvatore Sanzone, passando dalla Puglia troviamo Morena Mastromarino, arriviamo a Roma dove c'è Matteo Fabio e infine a Milano troviamo Davide Tavella.</p>
           <p>Di seguito troverai dei link con cui puoi contattare questo mitico gruppo!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quidem, maiores quas quibusdam alias quo dolor voluptas animi ullam nobis voluptatem dolorem? Saepe, nulla nostrum quos facere harum sit consequatur cum cupiditate eaque neque asperiores laboriosam vero delectus enim iste suscipit quisquam aperiam earum quo sunt veritatis et modi debitis. Porro esse maiores sequi ad quos mollitia quod eius placeat fugit sit qui eligendi dolorum facilis possimus numquam voluptate, aliquam officiis obcaecati excepturi, dolorem provident ea suscipit. Quod eius soluta quis placeat reiciendis dolore id aut necessitatibus perspiciatis, reprehenderit hic velit quae iste esse assumenda, explicabo amet aspernatur! Cupiditate, explicabo error! Facilis, provident tempore? Placeat iusto debitis, adipisci nemo ipsum alias itaque quis animi quibusdam fugiat at eaque excepturi ad deserunt ipsa delectus blanditiis ipsam quasi, eligendi est magnam repudiandae, inventore similique? Officia voluptatem assumenda consequuntur eius, fugit quidem at doloremque nostrum quod rerum exercitationem! Non ad recusandae nulla iusto dolor quia excepturi! Dolore corrupti quidem delectus. Iste necessitatibus, sed numquam repellendus aut architecto possimus reprehenderit distinctio! In aperiam dolor dicta nisi temporibus quo suscipit, ad quod, incidunt vel qui saepe. Nesciunt sequi reprehenderit vero a quae distinctio ad consequatur! Expedita reprehenderit, at deserunt ut saepe dolorum temporibus dolore quod assumenda non, soluta vitae est tempore incidunt sapiente. Facere excepturi alias error eius porro officiis ipsam repellat optio totam dicta sunt repudiandae unde explicabo, magnam maiores aliquid, quibusdam cupiditate reiciendis natus repellendus aperiam pariatur non! Aliquid tempore tenetur, sequi fugit culpa modi ab enim inventore, hic blanditiis ullam quisquam, error eos perspiciatis consequuntur molestiae perferendis qui provident dolore ipsum cupiditate at debitis odit iste. Modi in culpa deserunt pariatur necessitatibus maxime, omnis, voluptates doloribus dolore consequatur magnam labore animi esse alias cumque. Sed beatae magnam porro esse cum accusantium quasi in quidem, quod reprehenderit doloribus harum tempora temporibus! Reiciendis, facere.</p>
+          <ul>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+            </li>
+            <li>
+              <i class="fa-brands fa-linkedin-in"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-linkedin"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-linkedin"></i>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -79,6 +92,9 @@ export default {
     opacity: 0.9;
   }
 
+  i{
+    background-color: black;
+  }
 }
 
 </style>
