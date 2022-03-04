@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 border-bottom">
-          <h1 class="my-3">I nostri Appartamenti</h1>
+          <h1 class="my-3">{{ page_title }}</h1>
         </div>
       </div>
 
@@ -39,7 +39,10 @@
 
 
     <Card 
-    :flats="flats"/>
+    v-for="flat in flats"
+    :key="`flat${flat.id}`"
+    :flat="flat"/>
+
       <!-- prova mappa -->
       <input type="text" id="query" value="">
       <button onclick="search()">
@@ -62,6 +65,7 @@ export default {
     return{
       flats: [],
       baseUrl: 'http://127.0.0.1:8000',
+      page_title: 'Ecco la lista di appartamenti'
     }
   },
 
