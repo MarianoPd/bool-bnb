@@ -23,20 +23,45 @@
           <p>Ti presentiamo il team che ha sviluppato dalla A alla Z questo progetto.</p>
           <p>Faremo un po' il giro d'Italia insieme, partiremo dalla Sicilia dove incontreremo Mariano Pidone e Salvatore Sanzone, passando dalla Puglia troviamo Morena Mastromarino, arriviamo a Roma dove c'è Matteo Fabio e infine a Milano troviamo Davide Tavella.</p>
           <p>Di seguito troverai dei link con cui puoi contattare questo mitico gruppo!</p>
-          <ul>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-            </li>
-            <li>
-              <i class="fa-brands fa-linkedin-in"></i>
-            </li>
-            <li>
-              <i class="fa-brands fa-linkedin"></i>
-            </li>
-            <li>
-              <i class="fa-brands fa-linkedin"></i>
-            </li>
-          </ul>
+          <div class="links-zone">
+            <!-- link linkedin -->
+            <ul>
+              <li class="links">
+                <a href="https://www.linkedin.com/in/morena-mastromarino/" class="logo-linkedin-fake">Linkedin</a><p>Morena Mastromarino</p>
+              </li>
+              <li class="links">
+                <a href="https://www.linkedin.com/in/salvatore-sanzone-751304219/" class="logo-linkedin-fake">Linkedin</a><p>Salvatore Sanzone</p>
+              </li>
+              <li class="links">
+                <a href="https://www.linkedin.com/in/matteo-fabio/" class="logo-linkedin-fake">Linkedin</a> <p>Matteo Fabio</p>
+              </li>
+              <li class="links"> 
+                <a href="https://www.linkedin.com/in/davide-tavella-363b2820b/" class="logo-linkedin-fake">Linkedin</a> <p>Davide Tavella</p>
+              </li>
+              <li class="links">
+                <a href="https://www.linkedin.com/in/mariano-pidone-215621122/" class="logo-linkedin-fake">Linkedin</a> <p>Mariano Pidone</p>
+              </li>
+            </ul>
+
+            <!-- link ?!?! -->
+            <ul>
+              <li class="links">
+                <a href="https://github.com/MorenaMastromarino" class="logo-github-fake">GitHub</a><p>Morena Mastromarino</p>
+              </li>
+              <li class="links">
+                <a href="https://github.com/salvosanzone" class="logo-github-fake">GitHub</a><p>Salvatore Sanzone</p>
+              </li>
+              <li class="links">
+                <a href="https://github.com/matteofab10" class="logo-github-fake">GitHub</a> <p>Matteo Fabio</p>
+              </li>
+              <li class="links"> 
+                <a href="https://github.com/Tave23" class="logo-github-fake">GitHub</a> <p>Davide Tavella</p>
+              </li>
+              <li class="links">
+                <a href="https://github.com/MarianoPd" class="logo-github-fake">GitHub</a> <p>Mariano Pidone</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -92,9 +117,22 @@ export default {
     opacity: 0.9;
   }
 
-  i{
-    background-color: black;
-  }
 }
 
+.links-zone{
+  display: flex;
+}
+.links{
+  display: flex;
+}
+
+.logo-linkedin-fake{
+  color: #007bff;
+  margin-right: 20px;
+}
+
+.logo-github-fake{
+  color: red;
+  margin-right: 20px;
+}
 </style>
