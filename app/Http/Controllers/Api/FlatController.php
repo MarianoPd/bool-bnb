@@ -13,6 +13,14 @@ class FlatController extends Controller
         $flats = Flat::all();
 
         //dd($flats);
+        $flats->each(function($flat){
+            if ($flat->cover) {
+                $flat->cover = url('storage/' . $flat->cover);
+            }
+            else {
+                $flat->cover = url('img/no-image.jpg');
+            }
+        });
         return response()->json($flats);
     }
 }
