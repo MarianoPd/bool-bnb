@@ -7,7 +7,7 @@
 
         <div class="col-4">
           <div class="">
-            <!-- <img :src="flat.cover" alt="Foto non disponibile"> -->
+            <img class="w-100" :src="flat.cover">
           </div>
         </div>
 
