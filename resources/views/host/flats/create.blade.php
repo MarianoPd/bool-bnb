@@ -62,7 +62,7 @@
                             @enderror
                         </div>
                     </div>       
-                                 
+
                     {{-- info generali appartamento --}}
                     <div class="row ">
                         {{-- numero camere --}}
@@ -158,7 +158,6 @@
                 key: 'XiRMXj5sejVWEGY8Ze4M4Fq1PhYyKW4I',
                 query: query,
             }).then(res => {
-                console.log(res.results);
                 // salvo valore lat
                 const latInput = document.getElementById('latitude');
                 latInput.value = res.results[0].position.lat;

@@ -129,6 +129,9 @@ class FlatController extends Controller
         $request->validate($this->validationData(), $this->validationErrors());
 
         $data = $request->all();
+
+        // bisogna modificare migration flats per salvare lat e long(non sono stringhe)
+        dd($data);
         
         
         if($data['title'] != $flat->title){

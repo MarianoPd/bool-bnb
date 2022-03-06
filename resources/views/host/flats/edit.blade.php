@@ -140,8 +140,12 @@
 
                         <input type="file" class="t2-button" name="cover" id="cover">
                     </div>
+
+                    <input type="hidden" name="latitude" id="latitude" value="">
+                    <input type="hidden" name="longitude" id="longitude" value="">
         
-                    <button type="submit" class="t2-button">Salva</button>
+                    <a href="#" onclick="getLatLong()" class="t2-button">Salva</a>
+                    <button hidden type="submit" id="submitBtn"></button>
                     <button type="reset" class="t2-button" >Reset</button>
                     
                 </form>
@@ -150,6 +154,40 @@
             
         </div>
     </div>
+
+    <script>
+                    
+        function getLatLong(){
+            const city = document.getElementById('city');
+            const province = document.getElementById('province');
+            const address = document.getElementById('address');
+            // ottengo stringa indirizzo da cercare
+            const fullAddress = city.value + ", " + province.value + ", " + address.value;
+            this.ttApiRequest(fullAddress);
+
+        }
+
+        // chiamata Api per avere long e lat dell'indirizzo
+        function ttApiRequest(query) {
+            tt.services.fuzzySearch({
+                key: 'XiRMXj5sejVWEGY8Ze4M4Fq1PhYyKW4I',
+                query: query,
+            }).then(res => {
+                // salvo valore lat
+                const latInput = document.getElementById('latitude');
+                latInput.value = res.results[0].position.lat;
+
+                // salvo valore long
+                const longInput = document.getElementById('longitude');
+                longInput.value = res.results[0].position.lng;
+
+                // submit
+                document.getElementById('submitBtn').click();
+            });
+        }
+             
+
+    </script>
     
 @endsection
 
