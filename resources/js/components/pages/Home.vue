@@ -3,50 +3,50 @@
   <div>
 
 
-  <section class="home">
+    <section class="home">
 
-    <div class="carousel">
-      <img :src="houses[counter]" alt="">
-      <div class="overlay"></div>
-    </div>
+      <div class="carousel">
+        <img :src="houses[counter]" alt="">
+        <div class="overlay"></div>
+      </div>
 
-    <div class="nav-bar d-flex"> 
-        <div class="container">
-          <div class="row">
-            <div class="col-8 box p-0 border-right d-flex align-items-center">
-              <input
-              v-model="searchAddress"
-              v-on:keyup.enter="addressClicked"
-              type="text" 
-              placeholder="Dove vuoi andare?">
-            </div>
-            <div class="col-1 offset-3 box p-0">
-              <button 
-              @click="addressClicked"
-              class="search d-flex justify-content-center align-items-center bg-dark">
-                <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
-              </button>
+      <div class="nav-bar d-flex"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-8 box p-0 border-right d-flex align-items-center">
+                <input
+                v-model="searchAddress"
+                v-on:keyup.enter="addressClicked"
+                type="text" 
+                placeholder="Dove vuoi andare?">
+              </div>
+              <div class="col-1 offset-3 box p-0">
+                <button 
+                @click="addressClicked"
+                class="search d-flex justify-content-center align-items-center bg-dark">
+                  <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>
+      </div>
+      <!-- </div>  -->
+
+      <div class="text-home">
+        <div>
+          <span @click="isActive = !isActive" class="mx-3">
+            <!-- <a href="http://127.0.0.1:8000/appartamenti">BOOK A ROOM</a> -->
+            <a href="#promotion">PROMOZIONI</a>
+          </span>
         </div>
       </div>
-    </div> 
 
-    <div class="text-home">
-      <div>
-        <span @click="isActive = !isActive" class="mx-3">
-          <!-- <a href="http://127.0.0.1:8000/appartamenti">BOOK A ROOM</a> -->
-          <a href="#promotion">PROMOZIONI</a>
-        </span>
-      </div>
+    </section>
+
+
+    <div class="promotion-flats">
+      <div id="promotion">appartamenti in promozione!</div>
     </div>
-
-  </section>
-
-
-  <div class="promotion-flats">
-    <div id="promotion">appartamenti in promozione!</div>
-  </div>
     
   </div>
 
