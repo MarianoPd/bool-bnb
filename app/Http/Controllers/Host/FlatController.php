@@ -10,8 +10,6 @@ use App\Flat;
 use App\Service;
 use App\User;
 
-
-
 class FlatController extends Controller
 {
     /**
@@ -52,6 +50,9 @@ class FlatController extends Controller
         $data = $request->all();
         
         $data['slug'] = Flat::getSlug($data['title']);
+
+        // bisogna modificare migration flats per salvare lat e long(non sono stringhe)
+        dd($data);
 
 
         // controllo input image
@@ -128,6 +129,9 @@ class FlatController extends Controller
         $request->validate($this->validationData(), $this->validationErrors());
 
         $data = $request->all();
+
+        // bisogna modificare migration flats per salvare lat e long(non sono stringhe)
+        dd($data);
         
         
         if($data['title'] != $flat->title){

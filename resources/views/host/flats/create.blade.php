@@ -55,14 +55,14 @@
                             <label for="address">Indirizzo</label>
                             <input type="text" required
                                   class="t2-form-control @error('address') is-invalid @enderror" 
-                                  value="{{old('address')}}" style="text-transform:capitalize"
+                                  value="{{old('address')}}" style="text-transform:capitalize"                                  
                                   id="address"  name="address" placeholder="Inserisci l'indirizzo...">
                             @error('address')
                                 <p class="invalid-feedback">{{$message}}</p>
                             @enderror
                         </div>
-                    </div>
-        
+                    </div>       
+
                     {{-- info generali appartamento --}}
                     <div class="row ">
                         {{-- numero camere --}}
@@ -126,7 +126,12 @@
                         <br>
                         <input type="file" class="t2-button" name="cover" id="cover">
                     </div>        
-                    <button type="submit" class="t2-button">Crea</button>
+
+                    <input type="hidden" name="latitude" id="latitude" value="">
+                    <input type="hidden" name="longitude" id="longitude" value="">
+
+                    <a href="#" onclick="getLatLong()" class="t2-button">Crea</a>
+                    <button hidden type="submit" id="submitBtn"></button>
                     <button type="reset" class="t2-button" >Reset</button>
                 </form>
 
@@ -134,6 +139,41 @@
 
         </div>
     </div>
+    
+    <script>
+                    
+        function getLatLong(){
+            const city = document.getElementById('city');
+            const province = document.getElementById('province');
+            const address = document.getElementById('address');
+            // ottengo stringa indirizzo da cercare
+            const fullAddress = city.value + ", " + province.value + ", " + address.value;
+            this.ttApiRequest(fullAddress);
+
+        }
+
+        // chiamata Api per avere long e lat dell'indirizzo
+        function ttApiRequest(query) {
+            tt.services.fuzzySearch({
+                key: 'XiRMXj5sejVWEGY8Ze4M4Fq1PhYyKW4I',
+                query: query,
+            }).then(res => {
+                // salvo valore lat
+                const latInput = document.getElementById('latitude');
+                latInput.value = res.results[0].position.lat;
+
+                // salvo valore long
+                const longInput = document.getElementById('longitude');
+                longInput.value = res.results[0].position.lng;
+
+                // submit
+                document.getElementById('submitBtn').click();
+            });
+        }
+             
+
+    </script>
+
     
 @endsection
 
