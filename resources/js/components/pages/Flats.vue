@@ -13,19 +13,6 @@
       
     </section>
 
-    <!-- <div class="container my-5">
-      <div class="row">
-        <div class="col-6 box p-0 border-right d-flex align-items-center justify-content-center">
-          <input type="text" placeholder="Dove vuoi andare?">
-        </div>
-        <div class="col-1 offset-2 box p-0">
-          <button class="search d-flex justify-content-center align-items-center bg-dark">
-            <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
-    </div> -->
-
     <div class="container">
       <div class="nav-bar d-flex"> 
         <div class="container">
