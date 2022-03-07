@@ -45,4 +45,9 @@ class FlatController extends Controller
         return response()->json($flat);
 
     }
+
+    // public function getFlatsBySearch(){
+
+    //     $flat = Flat::where()
+    // }
 }

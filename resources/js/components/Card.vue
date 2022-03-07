@@ -3,11 +3,13 @@
     <div class="container">
 
       <div class="row border-bottom mt-3 pb-3">
-        <!-- v-for="flat in flats" :key="`categ${flat.id}`" -->
 
         <div class="col-4">
-          <div class="img-cont">
-            <img class="w-100" :src="flat.cover">
+
+
+          <div class="">
+            <img class="w-100 h-200px" :src="flat.cover">
+
           </div>
         </div>
 
@@ -53,13 +55,13 @@ export default {
   },
   data(){
     return{
-      isActive: false,
+      // isActive: false,
     }
   },
   methods: {
-   notActive(){
-     this.isActive = false;
-   }
+  //  notActive(){
+  //    this.isActive = false;
+  //  }
   },
   computed:{
 
@@ -86,6 +88,10 @@ export default {
   .img-cont{
     max-width: 100px;
   }
+}
+
+.h-200px{
+  max-height: 200px;
 }
 
 </style>

@@ -2,7 +2,7 @@
 
 
   <div class="content">
-    <section class="flats">
+    <section class="flats mb-5">
       <div class="video-container">
         <video autoplay muted loop>
           <source src="/img/video.mp4" type="video/mp4">
@@ -12,31 +12,21 @@
       <h1>Appartamenti</h1>
       
     </section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 border-bottom">
-          <h1 class="my-3">{{ page_title }}</h1>
-        </div>
-      </div>
 
-        <div class="row mt-5 border-bottom">
-          <div class="col-3 border">
-            <div class="py-2">Check-In</div>
-          </div>
-          <div class="col-3 border">
-            <div class="py-2">Check-Out</div>
-          </div>
-          <div class="col-3 border">
-            <div class="py-2">Persone</div>
-          </div>
-          <div class="col-3 btn btn-outline-dark border">
-            <div class="py-2">
-              Cerca
+    <div class="container">
+      <div class="nav-bar d-flex"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-8 box p-0 border-right d-flex align-items-center">
+              <input type="text" placeholder="Dove vuoi andare?">
+            </div>
+            <div class="col-4 box p-2 search justify-content-center align-items-center d-flex">
+              <i class="fa fa-search text-white bg-dark mr-3" aria-hidden="true"></i>Cerca appartamenti
             </div>
           </div>
         </div>
+      </div>
     </div>
-
 
     <Card 
     v-for="flat in flats"
@@ -123,4 +113,52 @@ export default {
     }
   }
 }
+
+  .nav-bar{
+    border: 1px solid lightgray;
+    border-radius: 40px;
+  }
+  .box{
+    color: black;
+    // border-right: 1px solid lightgray;
+    // border-radius: 40px;
+    // border: 1px solid lightgray;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+
+  input{
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 40px;
+    padding: 5px;
+    padding-left: 15px !important;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    &:focus{
+      outline: none !important;
+      border: none;
+    }
+    
+  }
+
+  .fa-search::before{
+    background-color: black;
+  }
+
+  .search{
+    background-color: black;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: white;
+    
+  }
 </style>
