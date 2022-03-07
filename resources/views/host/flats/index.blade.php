@@ -26,7 +26,7 @@
             <div class="container-card">
 
                 @foreach ($flats as $flat)
-                    <div class="col-5 card mb-5 mr-5 t2-card" style="width: 18rem; ">
+                    <div class="col-3 card mb-5 mr-5 mt-5 t2-card" style="width: 18rem; ">
 
                         @if ($flat->cover)
                             <div class="image pt-3">

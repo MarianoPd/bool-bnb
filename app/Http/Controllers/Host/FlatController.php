@@ -52,7 +52,7 @@ class FlatController extends Controller
         $data['slug'] = Flat::getSlug($data['title']);
 
         // bisogna modificare migration flats per salvare lat e long(non sono stringhe)
-        dd($data);
+        //dd($data);
 
 
         // controllo input image

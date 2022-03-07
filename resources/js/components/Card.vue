@@ -6,7 +6,7 @@
         <!-- v-for="flat in flats" :key="`categ${flat.id}`" -->
 
         <div class="col-4">
-          <div class="">
+          <div class="img-cont">
             <img class="w-100" :src="flat.cover">
           </div>
         </div>
@@ -20,18 +20,21 @@
 
         </div>
         <div class="col-4 d-flex flex-column align-items-center">
-          <h2>A partire da</h2>
-          <h2>250$</h2>
-          <div @click="isActive = true" class="btn btn-outline-dark">More Info</div>
+          <!-- <h2>A partire da</h2>
+          <h2>250$</h2> -->
+          <!-- <div @click="isActive = true" class="btn btn-outline-dark">More Info</div> -->
+          <div @click="isActive = true" class="btn btn-outline-dark">
+            <router-link  :to="{ name:'detail', params: { flat: flat} }">More Info</router-link>
+          </div>
         </div>
       </div>
 
       
-      <Popup 
+      <!-- <Popup 
         class="popup" 
         :class="{ active: isActive }" 
         @closePopup = "notActive" 
-        :flat="flat"/>
+        :flat="flat"/> -->
       
     </div>
 
@@ -79,6 +82,10 @@ export default {
 
 .card{
   border: none;
+
+  .img-cont{
+    max-width: 100px;
+  }
 }
 
 </style>
