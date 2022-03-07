@@ -11,15 +11,22 @@
     </div>
 
     <div class="nav-bar d-flex"> 
-      <div class="container">
-        <div class="row">
-          <div class="col-8 box p-0 border-right d-flex align-items-center">
-            <input type="text" placeholder="Dove vuoi andare?">
-          </div>
-          <div class="col-1 offset-3 box p-0">
-            <button class="search d-flex justify-content-center align-items-center bg-dark">
-              <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
-            </button>
+        <div class="container">
+          <div class="row">
+            <div class="col-8 box p-0 border-right d-flex align-items-center">
+              <input
+              v-model="searchAddress"
+              v-on:keyup.enter="addressClicked"
+              type="text" 
+              placeholder="Dove vuoi andare?">
+            </div>
+            <div class="col-1 offset-3 box p-0">
+              <button 
+              @click="addressClicked"
+              class="search d-flex justify-content-center align-items-center bg-dark">
+                <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -61,6 +68,7 @@ export default {
         '/img/house10.jpeg',
       ],
       counter: 0,
+      searchAddress: '',
     }
   },
   methods: {
@@ -70,6 +78,24 @@ export default {
         this.counter = 0;
       }
     },
+    addressClicked(){
+        tt.services.fuzzySearch({
+            key: 'XiRMXj5sejVWEGY8Ze4M4Fq1PhYyKW4I',
+            query: this.searchAddress,
+        }).then(res => {
+            // salvo valore lat
+            // const latInput = document.getElementById('latitude');
+            const latitude = res.results[0].position.lat;
+
+            // // salvo valore long
+            // const longInput = document.getElementById('longitude');
+            const longitude = res.results[0].position.lng;
+
+            // // submit
+            // document.getElementById('submitBtn').click();
+            console.log(latitude, longitude);
+        });
+    }
   },
   mounted(){
     setInterval(this.carouselPopUp, 4000);

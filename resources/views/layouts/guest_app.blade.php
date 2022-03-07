@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/guest/style.css')}}">
 
     {{-- tomtom --}}
-    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css'>
+    <link href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css' rel='stylesheet' type='text/css'>
     <style>
         body, html { margin: 0; padding: 0; }
         #map-div { width: 100%; height: 100%; }
