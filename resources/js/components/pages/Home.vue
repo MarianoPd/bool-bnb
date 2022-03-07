@@ -1,5 +1,8 @@
 <template>
 
+  <div>
+
+
   <section class="home">
 
     <div class="carousel">
@@ -14,9 +17,9 @@
               <input type="text" placeholder="Dove vuoi andare?">
             </div>
             <div class="col-1 offset-3 box p-0">
-              <div class="search d-flex justify-content-center align-items-center bg-dark">
+              <button class="search d-flex justify-content-center align-items-center bg-dark">
                 <i class="fa fa-search text-white bg-dark" aria-hidden="true"></i>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -25,12 +28,20 @@
     <div class="text-home">
       <div>
         <span @click="isActive = !isActive" class="mx-3">
-          <a href="http://127.0.0.1:8000/appartamenti">BOOK A ROOM</a>
+          <!-- <a href="http://127.0.0.1:8000/appartamenti">BOOK A ROOM</a> -->
+          <a href="#promotion">PROMOZIONI</a>
         </span>
       </div>
     </div>
 
   </section>
+
+
+  <div class="promotion-flats">
+    <div id="promotion">appartamenti in promozione!</div>
+  </div>
+    
+  </div>
 
 </template>
 
@@ -191,5 +202,11 @@ export default {
 
   }
 
+
+}
+.promotion-flats{
+  width: 100%;
+  height: 100vh;
+  padding: 75px;
 }
 </style>

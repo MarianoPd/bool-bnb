@@ -43,12 +43,10 @@
     :key="`flat${flat.id}`"
     :flat="flat"/>
 
-      <!-- prova mappa -->
-      <input type="text" id="query" value="">
-      <button onclick="search()">
-        SEARCH
-      </button>
-      <div id="map-div"></div>
+
+    <Card />
+      
+
   </div>
   
 
@@ -74,6 +72,7 @@ export default {
       axios.get(this.baseUrl + '/api/flats')
       .then(res =>{
         this.flats = res.data;
+        console.log('Appartamenti:', this.flats);
       });
     }
   },
