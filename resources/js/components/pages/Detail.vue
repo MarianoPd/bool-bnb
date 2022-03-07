@@ -66,24 +66,30 @@
                 </div>
                 </div>
                 <div class="col-4 border p-3 overflow-hidden">
-                <div class="border-left">
-                    <h4 class="ml-3">From</h4>
-                    <h4 class="ml-3">250$</h4>
-                    <h4 class="ml-3">Per Notte</h4>
-                </div>
-                <div class="border">
-                    <h6 class="ml-3 py-1">Check-in</h6>
-                </div>
-                <div class="border">
-                    <h6 class="ml-3 py-1">Check-out</h6>
-                </div>
-                <div class="border">
-                    <h6 class="ml-3 py-1">Ospiti</h6>
-                </div>
-                <div class="border mb-3">
-                    <input class="border-0 ml-3 py-1" placeholder="Posizione" type="text" id="query" value="">
-                </div>
-                <div id="map-div"></div>
+                    <div class="border-left">
+                        <h4 class="ml-3">From</h4>
+                        <h4 class="ml-3">250$</h4>
+                        <h4 class="ml-3">Per Notte</h4>
+                    </div>
+                    <div class="border">
+                        <h6 class="ml-3 py-1">Check-in</h6>
+                    </div>
+                    <div class="border">
+                        <h6 class="ml-3 py-1">Check-out</h6>
+                    </div>
+                    <div class="border">
+                        <h6 class="ml-3 py-1">Ospiti</h6>
+                    </div>
+                    <div class="border mb-3">
+                        <input class="border-0 ml-3 py-1" placeholder="Posizione" type="text" id="query" value="">
+                    </div>
+                    <div id="map-div"></div>
+                    <form action="">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email">
+                        <label for="testo">Testo:</label>
+                        <textarea name="testo" id="testo" cols="20" rows="10"></textarea>
+                    </form>
                 </div>
             </div>
             </div>
