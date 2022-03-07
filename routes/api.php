@@ -21,4 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')
     ->group(function(){
         Route::get('/flats', 'FlatController@index');
+        Route::get('/flats/{slug}', 'FlatController@show');
+        Route::get('/flats/search/{lat}/{lon}', 'FlatController@getFlatsBySearch');
     });
