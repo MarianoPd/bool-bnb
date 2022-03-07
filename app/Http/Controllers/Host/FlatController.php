@@ -131,7 +131,7 @@ class FlatController extends Controller
         $data = $request->all();
 
         // bisogna modificare migration flats per salvare lat e long(non sono stringhe)
-        dd($data);
+        //dd($data);
         
         
         if($data['title'] != $flat->title){
