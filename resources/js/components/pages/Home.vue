@@ -29,7 +29,8 @@
             </div>
           </div>
         </div>
-      </div> 
+      </div>
+    </div> 
 
     <div class="text-home">
       <div>
@@ -178,6 +179,11 @@ export default {
 
       &:hover{
         cursor: pointer;
+      }
+
+      &:focus{
+        outline: none !important;
+        border: none;
       }
       
     }
