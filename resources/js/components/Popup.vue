@@ -34,14 +34,8 @@
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nobis libero, maiores harum ab tempora veniam quod praesentium alias, provident corporis aperiam cum magnam iste! Unde nulla asperiores quod enim.</p>
                 </div>
               </div>
-              <div class="row border-bottom mt-3">
-                <div class="col-4 "> <strong>Sprecifiche:</strong></div>
-                <div class="col-6">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nobis libero, maiores harum ab tempora veniam quod praesentium alias, provident corporis aperiam cum magnam iste! Unde nulla asperiores quod enim.</p>
-                </div>
-              </div>
             </div>
-            <div class="col-4 border p-3">
+            <div class="col-4 border p-3 overflow-hidden">
               <div class="border-left">
                 <h4 class="ml-3">From</h4>
                 <h4 class="ml-3">250$</h4>
@@ -56,15 +50,16 @@
               <div class="border">
                 <h6 class="ml-3 py-1">Ospiti</h6>
               </div>
-              <div class="mt-3">
-                <div class="btn btn-dark">Cerca</div>
+              <div class="border mb-3">
+                <input class="border-0 ml-3 py-1" placeholder="Posizione" type="text" id="query" value="">
               </div>
+              <div id="map-div"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div  class="overlay-popup" :class="{ active: isActive }"></div>
+    <div class="overlay-popup"></div>
   </div>
   
 </template>
@@ -80,8 +75,6 @@ export default {
         'https://www.thespruce.com/thmb/mAxTP5LWYXy6z_C0xsIgGHm4hW4=/1777x1333/smart/filters:no_upscale()/beautiful-bathrooms-ideas-4101846-hero-e436124be1664154b7771e3b0d23676f.jpg'
       ],
       counter: 0,
-      isActive: false,
-
       
     }
   },
@@ -110,13 +103,15 @@ export default {
 .popup{
   //transform: scale(0);
   position: fixed;
-  top: 25%;
-  left: 20%;
-  width: 60%;
+  top: 15%;
+  //bottom: 15%;
+  right: 15%;
+  left: 15%;
+  //width: 60%;
   background-color: white;
   opacity: 0.99;
   border-radius: 15px;
-  z-index: 10;
+  z-index: 1;
   border: 1px solid black;
   box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.7);
 

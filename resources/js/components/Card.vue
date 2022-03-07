@@ -79,7 +79,7 @@
 
       
       <Popup 
-        class="notVisible" 
+        class="popup" 
         :class="{ active: isActive }" 
         @closePopup = "notActive" 
       />
@@ -111,11 +111,15 @@ export default {
 
 <style lang="scss" scoped>
 
-.notVisible{
+.popup{
   display: none;
+  // transform: scale(0);
+  transition: 0.5s;
+  
 }
 .active{
     display: block;
+    // transform: scale(1);
   }
 
 </style>
