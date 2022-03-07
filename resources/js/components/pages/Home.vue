@@ -154,6 +154,11 @@ export default {
       &:hover{
         cursor: pointer;
       }
+
+      &:focus{
+        outline: none !important;
+        border: none;
+      }
       
     }
 

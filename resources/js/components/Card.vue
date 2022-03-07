@@ -49,13 +49,13 @@ export default {
   },
   data(){
     return{
-      isActive: false,
+      // isActive: false,
     }
   },
   methods: {
-   notActive(){
-     this.isActive = false;
-   }
+  //  notActive(){
+  //    this.isActive = false;
+  //  }
   },
   computed:{
 
