@@ -27,7 +27,7 @@ class FlatController extends Controller
     // funzione show singolo flat
     public function show($slug){
 
-        $flat = Flat::where('slug', $slug)->with('service')->first();
+        $flat = Flat::where('slug', $slug)->with('services')->first();
 
         // percorsi assoluti
         if ($flat->cover) {
@@ -46,8 +46,37 @@ class FlatController extends Controller
 
     }
 
-    // public function getFlatsBySearch(){
+    public function getFlatsBySearch($lat, $lon){
+            
+            $flats = Flat::all();
+            $ret_flats = [];
+            foreach($flats as $flat){
+                $distance = $this->distance($lat, $lon, $flat->latitude, $flat->longitude);
+                if($distance < 20){
+                    if ($flat->cover) {
+                        $flat->cover = url('storage/' . $flat->cover);
+                    }
+                    else {
+                        $flat->cover = url('img/no-image.jpg');
+                    }
+                    array_push($ret_flats, $flat);                    
+                }
+            }
+            return response()->json($ret_flats);
+    }
 
-    //     $flat = Flat::where()
-    // }
+    private function distance($lat1, $lon1, $lat2, $lon2) {
+        if (($lat1 == $lat2) && ($lon1 == $lon2)) {
+          return 0;
+        }
+        else {
+          $theta = $lon1 - $lon2;
+          $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+          $dist = acos($dist);
+          $dist = rad2deg($dist);
+          $miles = $dist * 60 * 1.1515;
+          return ($miles * 1.609344);
+      
+        }
+    }
 }
