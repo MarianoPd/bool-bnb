@@ -58,28 +58,28 @@
                                 <h6>Numero di stanze:</h6>
                                 <div class="d-flex justify-content-around align-items-center">
                                     <h2 class="mr-3">{{$flat->room_number}}</h2>
-                                    <img width="50px" src="{{asset('storage/img/door2.png')}}" alt="">
+                                    <img width="50px" src="{{asset('img/logos/door2.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-6 border">
                                 <h6>Numero di bagni:</h6>
                                 <div class="d-flex justify-content-around align-items-center">
                                     <h2 class="mr-3">{{$flat->bathroom_number}}</h2>
-                                    <img width="50px" src="{{asset('storage/img/bathroom.png')}}" alt="">
+                                    <img width="50px" src="{{asset('img/logos/bathroom.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-6 border">
                                 <h6>Numero di letti:</h6>
                                 <div class="d-flex justify-content-around align-items-center">
                                     <h2 class="mr-3">{{$flat->bed_number}}</h2>
-                                    <img width="50px" src="{{asset('storage/img/bedroom.jpg')}}" alt="">
+                                    <img width="50px" src="{{asset('img/logos/bedroom.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-6 border">
                                 <h6>Metri quadri:</h6>
                                 <div class="d-flex justify-content-around align-items-center">
                                     <h2 class="mr-3">{{$flat->square_meters}}</h2>
-                                    <img width="50px" src="{{asset('storage/img/metri_quadri2.png')}}" alt="">
+                                    <img width="50px" src="{{asset('img/logos/metri_quadri2.png')}}" alt="">
                                 </div>
                             </div>
                         </div>

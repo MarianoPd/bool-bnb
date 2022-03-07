@@ -4,7 +4,7 @@
     <div class="popup" :class="{ active: isActive }">
       <div class="header-popup d-flex justify-content-between border-bottom p-3">
         <div>
-          <h2>Junior Suite</h2>
+          <h2>{{ flat.title }}</h2>
         </div>
         <button 
           class="close-btn" 
@@ -18,20 +18,47 @@
           <div class="row">
             <div class="col-8">
               <div class="carousel-popup">
-                <img :src="detailsImages[counter]" alt="">
-                <div @click="prev" class="prev">&larr;</div>
-                <div @click="next" class="next">&rarr;</div>
+                <img :src="flat.cover" alt="">
+                <!-- <div @click="prev" class="prev">&larr;</div>
+                <div @click="next" class="next">&rarr;</div> -->
               </div>
               <div class="row border-bottom mt-3">
-                <div class="col-4 "> <strong>Sprecifiche:</strong></div>
+                <div class="col-4 "> <strong>Informazioni:</strong></div>
                 <div class="col-6">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nobis libero, maiores harum ab tempora veniam quod praesentium alias, provident corporis aperiam cum magnam iste! Unde nulla asperiores quod enim.</p>
-                </div>
-              </div>
-              <div class="row border-bottom mt-3">
-                <div class="col-4 "> <strong>Sprecifiche:</strong></div>
-                <div class="col-6">
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nobis libero, maiores harum ab tempora veniam quod praesentium alias, provident corporis aperiam cum magnam iste! Unde nulla asperiores quod enim.</p>
+
+                  <div class="container-square">
+                    <div class="row row-cols-2 bg-white">
+                      <div class="col-6 border">
+                        <h6>Numero di stanze:</h6>
+                        <div class="d-flex justify-content-around align-items-center">
+                            <h2 class="mr-3">{{flat.room_number}}</h2>
+                            <img width="50px" src="../../../public/img/logos/door2.png" alt="">
+                        </div>
+                        </div>
+                        <div class="col-6 border">
+                            <h6>Numero di bagni:</h6>
+                            <div class="d-flex justify-content-around align-items-center">
+                                <h2 class="mr-3">{{flat.bathroom_number}}</h2>
+                                <img width="50px" src="../../../public/img/logos/bathroom.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-6 border">
+                            <h6>Numero di letti:</h6>
+                            <div class="d-flex justify-content-around align-items-center">
+                                <h2 class="mr-3">{{flat.bed_number}}</h2>
+                                <img width="50px" src="../../../public/img/logos/bedroom.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-6 border">
+                            <h6>Metri quadri:</h6>
+                            <div class="d-flex justify-content-around align-items-center">
+                                <h2 class="mr-3">{{flat.square_meters}}</h2>
+                                <img width="50px" src="../../../public/img/logos/metri_quadri2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  </div>  
+
                 </div>
               </div>
             </div>
@@ -75,8 +102,11 @@ export default {
         'https://www.thespruce.com/thmb/mAxTP5LWYXy6z_C0xsIgGHm4hW4=/1777x1333/smart/filters:no_upscale()/beautiful-bathrooms-ideas-4101846-hero-e436124be1664154b7771e3b0d23676f.jpg'
       ],
       counter: 0,
-      
+
     }
+  },
+  props:{
+    'flat': Object
   },
   methods: {
     next(){
