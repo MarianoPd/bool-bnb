@@ -10,7 +10,7 @@
         <div class="overlay"></div>
       </div>
 
-      <div class="nav-bar d-flex"> 
+      <!-- <div class="nav-bar d-flex"> 
           <div class="container">
             <div class="row">
               <div class="col-8 box p-0 border-right d-flex align-items-center">
@@ -29,7 +29,7 @@
               </div>
             </div>
           </div>
-      </div>
+      </div> -->
       <!-- </div>  -->
 
       <div class="text-home">

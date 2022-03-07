@@ -20,52 +20,54 @@
             <div class="container">
             <div class="row">
                 <div class="col-8">
-                <div class="">
-                    <img :src="flat.cover" alt="">
-                    <!-- <div @click="prev" class="prev">&larr;</div>
-                    <div @click="next" class="next">&rarr;</div> -->
-                </div>
-                <div class="row border-bottom mt-3">
-                    <div class="col-4 "> <strong>Informazioni:</strong></div>
-                    <div class="col-6">
-
-                    <div class="container">
-                        <div class="row row-cols-2 bg-white">
-                        <div class="col-6 border">
-                            <h6>Numero di stanze:</h6>
-                            <div class="d-flex justify-content-around align-items-center">
-                                <h2 class="mr-3">{{flat.room_number}}</h2>
-                                <img width="50px" src="" alt="">
-                            </div>
-                            </div>
-                            <div class="col-6 border">
-                                <h6>Numero di bagni:</h6>
-                                <div class="d-flex justify-content-around align-items-center">
-                                    <h2 class="mr-3">{{flat.bathroom_number}}</h2>
-                                    <img width="50px" src="" alt="">
-                                </div>
-                            </div>
-                            <div class="col-6 border">
-                                <h6>Numero di letti:</h6>
-                                <div class="d-flex justify-content-around align-items-center">
-                                    <h2 class="mr-3">{{flat.bed_number}}</h2>
-                                    <img width="50px" src="" alt="">
-                                </div>
-                            </div>
-                            <div class="col-6 border">
-                                <h6>Metri quadri:</h6>
-                                <div class="d-flex justify-content-around align-items-center">
-                                    <h2 class="mr-3">{{flat.square_meters}}</h2>
-                                    <img width="50px" src="" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-
+                    <div class="img-cont">
+                        <img :src="flat.cover" alt="">
+                        <!-- <div @click="prev" class="prev">&larr;</div>
+                        <div @click="next" class="next">&rarr;</div> -->
                     </div>
-                </div>
+                    <div class="row border-bottom mt-3">
+                        <div class="col-4 "> <strong>Informazioni:</strong></div>
+                        <div class="">
+
+                            <div class="container">
+                                <div class="row row-cols-2 bg-white">
+                                <div class="col-6 border">
+                                    <h6>Numero di stanze:</h6>
+                                    <div class="d-flex justify-content-around align-items-center">
+                                        <h2 class="mr-3">{{flat.room_number}}</h2>
+                                        <img width="50px" src="" alt="">
+                                    </div>
+                                    </div>
+                                    <div class="col-6 border">
+                                        <h6>Numero di bagni:</h6>
+                                        <div class="d-flex justify-content-around align-items-center">
+                                            <h2 class="mr-3">{{flat.bathroom_number}}</h2>
+                                            <img width="50px" src="" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 border">
+                                        <h6>Numero di letti:</h6>
+                                        <div class="d-flex justify-content-around align-items-center">
+                                            <h2 class="mr-3">{{flat.bed_number}}</h2>
+                                            <img width="50px" src="" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 border">
+                                        <h6>Metri quadri:</h6>
+                                        <div class="d-flex justify-content-around align-items-center">
+                                            <h2 class="mr-3">{{flat.square_meters}}</h2>
+                                            <img width="50px" src="" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="col-4 border p-3 overflow-hidden">
+
                     <div class="border-left">
                         <h4 class="ml-3">From</h4>
                         <h4 class="ml-3">250$</h4>
@@ -92,6 +94,7 @@
                     </form>
                 </div>
             </div>
+
             </div>
         </div>
         
@@ -111,17 +114,27 @@ export default {
                 'https://static.wixstatic.com/media/fde015_de93aa6357c14c439e80f661e7a71e67.jpg/v1/fill/w_649,h_408,q_85,usm_0.66_1.00_0.01/fde015_de93aa6357c14c439e80f661e7a71e67.jpg',
                 'https://www.thespruce.com/thmb/mAxTP5LWYXy6z_C0xsIgGHm4hW4=/1777x1333/smart/filters:no_upscale()/beautiful-bathrooms-ideas-4101846-hero-e436124be1664154b7771e3b0d23676f.jpg'
             ],
+            
+            baseUrl: 'http://127.0.0.1:8000',
             flat: Object,
         }
+        
     },
-    props: {
-        apartment: Object,
+    props:{
+        slug: String,
     },
-
-    mounted(){
-        if(this.apartment !== this.flat){
-            this.flat = this.apartment;
+    
+    methods:{
+        getApiElement(){
+            axios.get(this.baseUrl + '/api/flats/' + this.slug)
+                .then(res=>{
+                    this.flat = res.data;
+                    console.log('details : ', res.data);
+                })
         }
+    },
+    mounted(){
+        this.getApiElement();
     }
 
 }
@@ -141,6 +154,14 @@ export default {
       background: none;
       font-size: 1.25rem;
       font-weight: bold;
+}
+
+.img-cont{
+    width: 100%;
+    object-fit: cover;
+    img{
+        width: 100%;
+    }
 }
 
 .popup{
