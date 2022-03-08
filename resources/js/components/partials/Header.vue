@@ -54,7 +54,7 @@ export default {
 
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.nav-bar');
-        if(lastScrollY > 242){
+        if(lastScrollY > 50){
             navbar.classList.add("nav-hide");
         } else{
             navbar.classList.remove("nav-hide");
@@ -110,7 +110,7 @@ header{
 }
 
 .nav-hide{
-    background-color: black;
+    background-color: rgb(46, 45, 45);
     transition: 0.5s;
 }
 

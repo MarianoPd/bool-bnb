@@ -177,7 +177,8 @@ export default {
 
 .t2-container{
     position: relative;
-    top: 100px;
+    top: 50px;
+    margin-bottom: 100px;
 }
 
 .close-btn{

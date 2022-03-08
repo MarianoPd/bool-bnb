@@ -25,7 +25,7 @@
           <!-- <h2>A partire da</h2>
           <h2>250$</h2> -->
           <!-- <div @click="isActive = true" class="btn btn-outline-dark">More Info</div> -->
-          <div @click="isActive = true" class="btn btn-outline-dark">
+          <div @click="isActive = true" class="t2-button mt-5">
             <router-link  :to="{ name:'detail', query: { slug: flat.slug} }">More Info</router-link>
           </div>
         </div>
@@ -92,6 +92,30 @@ export default {
 
 .h-200px{
   max-height: 200px;
+}
+
+.t2-button{
+    border-radius: 20px;
+    border: 1px solid rgb(46, 45, 45);
+    font-weight: 500;
+    color: rgb(46, 45, 45);
+    text-decoration: none;
+    padding: 3px 12px;
+    &:hover{
+        color: white;
+        text-decoration: none;
+        background-color: rgb(46, 45, 45);
+        transition: all 0.3s;
+        //box-shadow: 0  1px 4px rgba($color: #000000, $alpha: 0.7);
+    }
+    a{
+        text-decoration: none;
+        color: rgb(46, 45, 45);
+        &:hover{
+            color: white;
+            text-decoration: none;
+        }
+    }
 }
 
 </style>

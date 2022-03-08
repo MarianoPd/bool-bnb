@@ -1,9 +1,9 @@
 <template>
 
-  <!-- <footer class="d-flex justify-content-between">
+  <footer class="d-flex justify-content-between">
     <div>BollBnB - Made By Team 2</div>
     <div>Made in Italy</div>
-  </footer> -->
+  </footer>
 
 </template>
 
@@ -17,9 +17,10 @@ export default {
 footer{
   padding: 10px;
   width: 100%;
-  position: fixed;
+  height: 70px;
   //position: absolute;
-  bottom: 0;
+  
   color: white;
+  background-color: rgb(46, 45, 45);
 }
 </style>
