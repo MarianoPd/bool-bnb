@@ -107,6 +107,9 @@ export default {
         background-color: rgb(46, 45, 45);
         transition: all 0.3s;
         //box-shadow: 0  1px 4px rgba($color: #000000, $alpha: 0.7);
+        a{
+          color:white;
+        }
     }
     a{
         text-decoration: none;
