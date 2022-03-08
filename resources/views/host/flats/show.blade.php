@@ -103,9 +103,15 @@
         </div>
         <div>
             @foreach ($flat->messages as $message)
-                <p>{{$message->email}}</p>
-                <p>{{$message->text}}</p>
-                <hr>
+                <div class="t2-message">
+                    <p class="d-flex justify-content-around">
+                        <span>Da: <strong class="text-danger">{{$message->email}}</strong></span>
+                        <span>Data: <strong>{{date_format($message->created_at, 'd-m-Y')}}</strong></span>
+                    </p>
+                    
+                    <p>{{$message->text}}</p>
+                    
+                </div>
             @endforeach
         </div>
     </div>
