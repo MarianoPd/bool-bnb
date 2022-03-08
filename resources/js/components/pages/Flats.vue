@@ -3,17 +3,17 @@
 
   <div class="content">
     <section class="flats mb-5">
-      <!-- <div class="video-container">
+      <div class="video-container">
         <video autoplay muted loop>
           <source src="/img/video.mp4" type="video/mp4">
         </video> 
         <div class="overlay"></div>
-      </div> -->
+      </div>
       <h1>Appartamenti</h1>
       
     </section>
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="nav-bar d-flex"> 
         <div class="container">
           <div class="row">
@@ -34,8 +34,23 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="wrap">
+      <div class="search">
+          <input class="searchTerm" placeholder="Dove vuoi andare?"
+          v-model="searchAddress"
+          v-on:keyup.enter="addressClicked"
+          type="text">
+          <button 
+          @click="addressClicked"
+          type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+      </div>
     </div>
 
+    <div v-if="flats">
 
       <div v-if="flats.length !== 0">
         <Card         
@@ -44,12 +59,17 @@
           :flat="flat"
         />
       </div>
-      <div v-else class="text-center mt-5">
+
+      <!-- risposta in caso di nessun risultato -->
+      <div v-else class="text-center mt-5 mb-5">
         <h1>Non ci sono risultati per questa ricerca</h1>
       </div>
-     
-    
-    
+
+    </div>
+
+    <div v-else>
+      <Loading />
+    </div>
 
   </div>
   
@@ -58,14 +78,16 @@
 
 <script>
 import Card from '../Card.vue';
+import Loading from '../partials/Loading.vue';
 export default {
   name: 'Flats',
   components: {
-    Card
+    Card,
+    Loading
   },
   data(){
     return{
-      flats: [],
+      flats: null,
       baseUrl: 'http://127.0.0.1:8000',
       page_title: 'Ecco la lista di appartamenti',
       searchAddress: '',
@@ -193,7 +215,6 @@ export default {
 
     &:focus{
       outline: none !important;
-      border: none;
     }
     
   }
@@ -202,11 +223,57 @@ export default {
     background-color: black;
   }
 
-  .search{
-    background-color: black;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    color: white;
+  // .search{
+  //   background-color: black;
+  //   border-top-right-radius: 40px;
+  //   border-bottom-right-radius: 40px;
+  //   color: white;
     
-  }
+  // }
+
+
+// css navbar
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 725px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 </style>
