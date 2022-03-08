@@ -82,16 +82,22 @@
                     <div class="border">
                         <h6 class="ml-3 py-1">Ospiti</h6>
                     </div>
-                    <div class="border mb-3">
+                    <!-- <div class="border mb-3">
                         <input class="border-0 ml-3 py-1" placeholder="Posizione" type="text" id="query" value="">
                     </div>
-                    <div id="map-div"></div>
-                    <form action="">
-                        <label for="email">Email:</label>
-                        <input type="text" name="email">
-                        <label for="testo">Testo:</label>
-                        <textarea name="testo" id="testo" cols="20" rows="10"></textarea>
-                    </form>
+                    <div id="map-div"></div> -->
+                    
+                        <div>
+                            <label for="email">Email:</label>
+                            <input v-model="send_email" type="text" name="email">
+                        </div>
+
+                        <div>
+                            <label for="testo">Testo:</label>
+                            <textarea v-model="send_text" name="testo" id="testo" cols="20" rows="10"></textarea>
+                        </div>
+                        <button @click="sendMessage" type="submit">Invia</button>
+                    
                 </div>
             </div>
 
@@ -117,6 +123,9 @@ export default {
             
             baseUrl: 'http://127.0.0.1:8000',
             flat: Object,
+            send_email: '',
+            send_text: '',
+            slug_search: this.$route.query.slug,
         }
         
     },
@@ -126,13 +135,31 @@ export default {
     
     methods:{
         getApiElement(){
-            axios.get(this.baseUrl + '/api/flats/' + this.slug)
+            console.log(this.slug_search);
+            axios.get(this.baseUrl + '/api/flats/' + this.slug_search)
                 .then(res=>{
                     this.flat = res.data;
                     console.log('details : ', res.data);
                 })
+        },
+
+        sendMessage(){
+            
+            const data = {
+                email: this.send_email,
+                text: this.send_text,
+                id: this.flat.id,
+            };
+            
+            axios.post(this.baseUrl + '/api/detail/', data )
+                .then(res => {
+                    console.log(res.data.succes);
+                }).catch(e =>{
+                    console.log(e.response.data);
+                })  
         }
     },
+
     mounted(){
         this.getApiElement();
     }

@@ -4,9 +4,9 @@
   <div class="content">
     <section class="flats mb-5">
       <div class="video-container">
-        <video autoplay muted loop>
+        <!-- <video autoplay muted loop>
           <source src="/img/video.mp4" type="video/mp4">
-        </video>
+        </video> -->
         <div class="overlay"></div>
       </div>
       <h1>Appartamenti</h1>

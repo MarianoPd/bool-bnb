@@ -23,4 +23,6 @@ Route::namespace('Api')
         Route::get('/flats', 'FlatController@index');
         Route::get('/flats/{slug}', 'FlatController@show');
         Route::get('/flats/search/{lat}/{lon}', 'FlatController@getFlatsBySearch');
+
+        Route::post('detail', 'MessageContoller@store');
     });
