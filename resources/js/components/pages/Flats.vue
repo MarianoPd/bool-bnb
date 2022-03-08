@@ -50,20 +50,26 @@
       </div>
     </div>
 
+    <div v-if="flats">
 
-    <div v-if="flats.length !== 0">
-      <Card         
-        v-for="flat in flats"
-        :key="`flat${flat.id}`"
-        :flat="flat"
-      />
+      <div v-if="flats.length !== 0">
+        <Card         
+          v-for="flat in flats"
+          :key="`flat${flat.id}`"
+          :flat="flat"
+        />
+      </div>
+
+      <!-- risposta in caso di nessun risultato -->
+      <div v-else class="text-center mt-5 mb-5">
+        <h1>Non ci sono risultati per questa ricerca</h1>
+      </div>
+
     </div>
-    <div v-else class="text-center mt-5">
-      <h1>Non ci sono risultati per questa ricerca</h1>
+
+    <div v-else>
+      <Loading />
     </div>
-     
-    
-    
 
   </div>
   
@@ -72,14 +78,16 @@
 
 <script>
 import Card from '../Card.vue';
+import Loading from '../partials/Loading.vue';
 export default {
   name: 'Flats',
   components: {
-    Card
+    Card,
+    Loading
   },
   data(){
     return{
-      flats: [],
+      flats: null,
       baseUrl: 'http://127.0.0.1:8000',
       page_title: 'Ecco la lista di appartamenti',
       searchAddress: '',
