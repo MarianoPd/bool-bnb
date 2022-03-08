@@ -4,12 +4,10 @@
     <div class="container mb-5">
         <div class="button-zone mb-3">
             {{-- bottone edi --}}
-            <button class="btn btn-info mr-3">
-                <a href="{{route('host.flats.edit', $flat)}}">Modifica appartamento</a>
-            </button>
+            
 
             {{-- Bottone torna alla lista appartamenti --}}
-            <button class="btn btn-warning ">
+            <button class="t2-button ">
                 <a href="{{ route('host.flats.index')}}">I miei appartamenti</a>
             </button>
         </div>
@@ -89,19 +87,26 @@
             
 
             {{-- bottone elimina --}}
+            
             <form onsubmit="return confirm('Questa azione cancellerà definitivamente questo appartamento e tutti i sui dati. Sei sicuro di procedere?')"
-            action="{{route('host.flats.destroy', $flat)}}" method="POST">
+            action="{{route('host.flats.destroy', $flat)}}" method="POST" class="mt-5 mb-5">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger mt-5">
+                <button class="t2-button mr-2">
+                    <a href="{{route('host.flats.edit', $flat)}}">Modifica appartamento</a>
+                </button>
+                <button type="submit" class="t2-button">
                     Elimina appartamento
                 </button>
-            </form>
+            </form>     
 
-            
-
-
-
+        </div>
+        <div>
+            @foreach ($flat->messages as $message)
+                <p>{{$message->email}}</p>
+                <p>{{$message->text}}</p>
+                <hr>
+            @endforeach
         </div>
     </div>
     

@@ -48,6 +48,7 @@ class FlatController extends Controller
 
     public function getFlatsBySearch($lat, $lon){
             
+            
             $flats = Flat::all();
             $ret_flats = [];
             foreach($flats as $flat){

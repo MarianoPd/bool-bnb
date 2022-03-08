@@ -90,7 +90,7 @@ class FlatController extends Controller
     public function show($slug)
     {
         //dd($id);
-        $flat = Flat::where('slug',$slug)->first();
+        $flat = Flat::where('slug',$slug)->with('messages')->first();
         
         
         if($flat){

@@ -15,7 +15,7 @@ class MessageContoller extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     

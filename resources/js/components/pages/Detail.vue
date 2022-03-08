@@ -86,18 +86,20 @@
                         <input class="border-0 ml-3 py-1" placeholder="Posizione" type="text" id="query" value="">
                     </div>
                     <div id="map-div"></div> -->
-                    
+                     <form v-if="!sended" @submit.prevent="sendMessage">
                         <div>
                             <label for="email">Email:</label>
-                            <input v-model="send_email" type="text" name="email">
+                            <input v-model="send_email" type="email" name="email">
                         </div>
 
                         <div>
                             <label for="testo">Testo:</label>
                             <textarea v-model="send_text" name="testo" id="testo" cols="20" rows="10"></textarea>
                         </div>
-                        <button @click="sendMessage" type="submit">Invia</button>
-                    
+                        <button  type="submit">Invia</button>
+                        
+                    </form>
+                    <p v-if="sended">Messaggio inviato</p>
                 </div>
             </div>
 
@@ -126,6 +128,7 @@ export default {
             send_email: '',
             send_text: '',
             slug_search: this.$route.query.slug,
+            sended: false,
         }
         
     },
@@ -154,6 +157,9 @@ export default {
             axios.post(this.baseUrl + '/api/detail/', data )
                 .then(res => {
                     console.log(res.data.succes);
+                    this.sended = true;
+                    this.send_text = '';
+                    this.send_email = '';
                 }).catch(e =>{
                     console.log(e.response.data);
                 })  

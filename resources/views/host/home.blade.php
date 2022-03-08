@@ -27,11 +27,13 @@
                         Benvenuto nell'area Host!
     
                         <div class="button-zone mt-4">
-    
-                            <a type="button" class="t2-button "
+                            
+                            <a type="button" class="t2-button mr-3"
                             href="{{ route('host.flats.index')}}">I miei appartamenti</a>
-                            <a type="button" class="t2-button"
+                            
+                            <a  type="button" class="t2-button"
                             href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
+                            
                             
                         </div>
                         

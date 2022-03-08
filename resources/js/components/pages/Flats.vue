@@ -3,12 +3,12 @@
 
   <div class="content">
     <section class="flats mb-5">
-      <div class="video-container">
-        <!-- <video autoplay muted loop>
+      <!-- <div class="video-container">
+        <video autoplay muted loop>
           <source src="/img/video.mp4" type="video/mp4">
-        </video> -->
+        </video> 
         <div class="overlay"></div>
-      </div>
+      </div> -->
       <h1>Appartamenti</h1>
       
     </section>
@@ -36,10 +36,18 @@
       </div>
     </div>
 
-     <Card 
-    v-for="flat in flats"
-    :key="`flat${flat.id}`"
-    :flat="flat"/>
+
+      <div v-if="flats.length !== 0">
+        <Card         
+          v-for="flat in flats"
+          :key="`flat${flat.id}`"
+          :flat="flat"
+        />
+      </div>
+      <div v-else class="text-center mt-5">
+        <h1>Non ci sono risultati per questa ricerca</h1>
+      </div>
+     
     
     
 
@@ -80,16 +88,19 @@ export default {
         }).then(res => {
             // salvo valore lat
             // const latInput = document.getElementById('latitude');
-            const latitude = res.results[0].position.lat;
+            //console.log('RISULTATI',res);
+            //console.log(res.results);
+            if(res.results.length !== 0){
+              const latitude = res.results[0].position.lat;
 
-            // // salvo valore long
-            // const longInput = document.getElementById('longitude');
-            const longitude = res.results[0].position.lng;
-
-            // // submit
-            // document.getElementById('submitBtn').click();
-            console.log(latitude, longitude);
-            this.getSearch(latitude, longitude);
+              // // salvo valore long
+              // const longInput = document.getElementById('longitude');
+              const longitude = res.results[0].position.lng;
+              console.log(latitude, longitude);
+              this.getSearch(latitude, longitude);
+            }
+            this.flats = [];
+            
 
         });
     },
