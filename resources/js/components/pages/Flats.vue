@@ -220,7 +220,7 @@ export default {
   }
 
   .fa-search::before{
-    background-color: black;
+    background-color: rgb(46, 45, 45);
   }
 
   // .search{
@@ -242,24 +242,24 @@ export default {
 
 .searchTerm {
   width: 100%;
-  border: 3px solid black;
+  border: 3px solid rgb(46, 45, 45);
   border-right: none;
   padding: 5px;
   height: 36px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: black;
+  color: rgb(46, 45, 45);
 }
 
 .searchTerm:focus{
-  color: black;
+  color: rgb(46, 45, 45);
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid black;
-  background: black;
+  border: 1px solid rgb(46, 45, 45);
+  background: rgb(46, 45, 45);
   text-align: center;
   color: white;
   border-radius: 0 5px 5px 0;
