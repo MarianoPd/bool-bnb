@@ -1,7 +1,7 @@
 <template>
-<div class="text-center">
-   <!-- <div class="lds-ring"><div></div><div></div><div></div><div></div></div> -->
-   <h1>Loading</h1>
+<div class="mt-5 text-center">
+   <h2>Loading</h2>
+   <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 </div>
 </template>
 
@@ -11,40 +11,45 @@ export default {
 }
 </script>
 
-<style>
-   .lds-ring {
+<style lang="scss" scoped>
+
+  h2 {
+    color: rgb(46, 45, 45);
+  }
+  .lds-ring {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
-}
-.lds-ring div {
+  }
+  .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #fff;
+  border: 8px solid rgb(46, 45, 45);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
+  border-color: rgb(46, 45, 45) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
+  }
+  .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
+  }
+  .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
-}
-@keyframes lds-ring {
+  }
+  @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-}
+  }
+
 </style>

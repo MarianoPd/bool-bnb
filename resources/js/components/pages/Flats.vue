@@ -308,10 +308,6 @@ export default {
         border: 1px solid rgb(46, 45, 45);
         background-color: white;
         color: rgb(46, 45, 45);
-
-
-
-
         a{
           color:white;
         }
