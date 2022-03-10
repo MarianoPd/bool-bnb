@@ -8,6 +8,7 @@ use App\Sponsorship;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Flat;
+use Facade\FlareClient\Http\Response;
 
 class PlansController extends Controller
 {
@@ -44,8 +45,17 @@ class PlansController extends Controller
         return view('host.payment', compact('flat','response','sponsorship'));
     }
 
-    public function pay($token, $cardN){
-
+    public function pay(Request $requestForm){
+        
+        $data = $requestForm->all();
+        //dd($data);
+        $token = $data['token'];
+        $spoName = $data['spoName'];
+        $card = $data['card'];
+        $request = Request::create('api/orders/make/payment', 'POST',['token','spoName']);
+        $response = Route::dispatch($request);
+        //json_decode(Route::dispatch($request)->getContent());
+        return $response;
     }
     
 

@@ -24,15 +24,9 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request,Gateway $gateway){
         
-        $sponsorship = Sponsorship::find($request->sponsorship);
-        return $sponsorship;
-        $result = $gateway->transaction()->sale([
-            'amount' => $sponsorship->price,
-            'paymentMethodNonce' => $request->token,
-            'options' => [
-                'submitForSettlement' => true
-            ]
-        ]);
+        $sponsorship = Sponsorship::where('name',$request->spoName)->first();
+        //dd($request->all());
+        
 
         if (isset($request->validator) && $request->validator->fails()) {
             return response()->json([
@@ -41,17 +35,27 @@ class OrderController extends Controller
                 'errors'    => $request->validator->errors()
             ]);
         }
+        //dd($sponsorship->price,$request->token);
+        $result = $gateway->transaction()->sale([
+            'amount' => strval($sponsorship->price),
+            'paymentMethodNonce' => 'fake-valid-nonce',  //$request->token,
+            'options' => [
+                'submitForSettlement' => True
+            ]
+        ]);
 
         if($result->success){
             $data =[
                 'success' => true,
                 'message' => "Transazione eseguita con successo",
+                
             ];
             return response()->json($data, 200);
         }else{
             $data =[
                 'success' => false,
                 'message' => "Transazione Fallita",
+                
             ];
             return response()->json($data, 401);
         }

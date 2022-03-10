@@ -27,7 +27,7 @@ class ValidSponsorship implements Rule
     public function passes($attribute, $value)
     {
         
-        if(Sponsorship::where('slug',$value)){
+        if(Sponsorship::where('name',$value)->first()){
             return true;
         }
         return false;
