@@ -1,5 +1,8 @@
 <template>
-   <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<div class="text-center">
+   <!-- <div class="lds-ring"><div></div><div></div><div></div><div></div></div> -->
+   <h1>Loading</h1>
+</div>
 </template>
 
 <script>
