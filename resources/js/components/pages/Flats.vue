@@ -54,7 +54,7 @@
 
     </div>
 
-    <!-- <div v-if="flats.length !== 0">
+    <div v-if="flats.length !== 0">
 
       <div v-if="flats.length !== 0">
         <Card         
@@ -64,14 +64,14 @@
         />
       </div>
 
-      risposta in caso di nessun risultato
+      <!-- risposta in caso di nessun risultato -->
       <div v-else class="text-center mt-5 mb-5">
         <h1>Non ci sono risultati per questa ricerca</h1>
       </div>
 
-    </div> -->
+    </div>
 
-    <div>
+    <div v-else>
       <Loading />
     </div>
 
