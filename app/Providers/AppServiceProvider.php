@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Braintree;
 use Illuminate\Support\ServiceProvider;
 use Braintree\Gateway;
 
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
                 'privateKey' => '7c69906f4f6b8f08dae59537e12cd405'
             ]);
         });
+        
         
     }
 }

@@ -27,7 +27,7 @@ class OrderRequest extends FormRequest
         
         return [
             'token' => 'required',
-            'sponsorship' => [
+            'spoName' => [
                 'required',
                 new ValidSponsorship()
             ],
