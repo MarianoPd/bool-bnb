@@ -48,19 +48,18 @@ class PlansController extends Controller
     public function pay(Request $requestForm){
         
         $data = $requestForm->all();
-        //dd($data);
         $token = $data['token'];
         $spoName = $data['spoName'];
         $card = $data['card'];
+        $flat = Flat::where('slug',$data['flatSlug'])->first();
+        $sponsorship = Sponsorship::where('name', $spoName)->first();
+        $flat->sponsorships()->attach($sponsorship->id);
         $request = Request::create('api/orders/make/payment', 'POST',['token','spoName']);
-        //$response = Route::dispatch($request);
         $response = json_decode(Route::dispatch($request)->getContent());
-        
-        //return $response;
-
         return view('host.post_payment', compact('response'));
     }
     
 
+    
     
 }

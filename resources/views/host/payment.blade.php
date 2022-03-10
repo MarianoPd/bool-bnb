@@ -15,6 +15,7 @@
             <input type="text" name="card" id="card">
             <input type="hidden" name="token" id="token" value="{{$response->token}}">
             <input type="hidden" name="spoName" id="spoName" value="{{$sponsorship->name}}">
+            <input type="hidden" name="flatSlug" id="flatSlug" value="{{$flat->slug}}">
             <br>
             <button class="t2-button mt-3" type="submit" >
                 Paga Ora

@@ -47,6 +47,6 @@ class Flat extends Model
     }
 
     public function sponsorships(){
-        return $this->belongsToMany('App\Sponsorship');
+        return $this->belongsToMany('App\Sponsorship')->withTimestamps();
     }
 }
