@@ -35,19 +35,23 @@
         </div>
       </div>
     </div> -->
-
-    <div class="wrap">
-      <div class="search">
-          <input class="searchTerm" placeholder="Dove vuoi andare?"
-          v-model="searchAddress"
-          v-on:keyup.enter="addressClicked"
-          type="text">
-          <button 
-          @click="addressClicked"
-          type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-        </button>
+    <div class="d-flex justify-content-center mb-4">
+      <div class="wrap mr-5">
+        <div class="search">
+            <input class="searchTerm" placeholder="Dove vuoi andare?"
+            v-model="searchAddress"
+            v-on:keyup.enter="addressClicked"
+            type="text">
+            <button 
+            @click="addressClicked"
+            type="submit" class="searchButton">
+              <i class="fa fa-search"></i>
+          </button>
+        </div>
       </div>
+
+      <button class="t2-button" @click="getFlats()">Mostra tutti</button>
+
     </div>
 
     <div v-if="flats" class="pt-5">
@@ -195,17 +199,17 @@ export default {
     border: 1px solid lightgray;
     border-radius: 40px;
   }
-  .box{
-    color: black;
-    // border-right: 1px solid lightgray;
-    // border-radius: 40px;
-    // border: 1px solid lightgray;
+  // .box{
+  //   color: black;
+  //   // border-right: 1px solid lightgray;
+  //   // border-radius: 40px;
+  //   // border: 1px solid lightgray;
 
-    &:hover{
-      cursor: pointer;
-    }
+  //   &:hover{
+  //     cursor: pointer;
+  //   }
 
-  }
+  // }
 
   input{
     border: none;
@@ -276,11 +280,53 @@ export default {
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 30%;
-  position: absolute;
-  top: 725px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 40%;
+  // position: absolute;
+  // top: 725px;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+}
+
+.t2-button{
+    border-radius: 20px;
+    border: 1px solid rgb(46, 45, 45);
+
+
+
+
+    border: transparent;
+    color: white;
+    background-color: rgb(46, 45, 45);
+
+
+
+
+
+    font-weight: 500;
+    // color: rgb(46, 45, 45);
+    text-decoration: none;
+    padding: 3px 12px;
+    &:hover{
+        // color: white;
+        text-decoration: none;
+        // background-color: rgb(46, 45, 45);
+        transition: all 0.3s;
+        //box-shadow: 0  1px 4px rgba($color: #000000, $alpha: 0.7);
+        border: 1px solid rgb(46, 45, 45);
+        background-color: white;
+        color: rgb(46, 45, 45);
+        a{
+          color:white;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: rgb(46, 45, 45);
+        &:hover{
+            color: white;
+            text-decoration: none;
+        }
+    }
 }
 
 </style>
