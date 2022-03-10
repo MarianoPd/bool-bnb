@@ -3,7 +3,7 @@
         <div class="header-bg"></div>
 
 
-        <div class="container t2-container">
+        <div v-if="'id' in flat" class="container t2-container">
             <div class=" d-flex justify-content-between border-bottom p-3">
                 <div>
                     <h2>{{ flat.title }}</h2>
@@ -117,6 +117,10 @@
             </div>
 
         </div>
+
+        <div v-else>
+            <Loading />
+        </div>
         
     
     </div>
@@ -124,8 +128,12 @@
 </template>
 
 <script>
+import Loading from '../partials/Loading.vue';
 export default {
     name: 'Detail',
+    components: {
+        Loading
+    },
     data(){
         return{
             detailsImages: [
