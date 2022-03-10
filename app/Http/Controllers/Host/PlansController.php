@@ -53,9 +53,12 @@ class PlansController extends Controller
         $spoName = $data['spoName'];
         $card = $data['card'];
         $request = Request::create('api/orders/make/payment', 'POST',['token','spoName']);
-        $response = Route::dispatch($request);
-        //json_decode(Route::dispatch($request)->getContent());
-        return $response;
+        //$response = Route::dispatch($request);
+        $response = json_decode(Route::dispatch($request)->getContent());
+        
+        //return $response;
+
+        return view('host.post_payment', compact('response'));
     }
     
 
