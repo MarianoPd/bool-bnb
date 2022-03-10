@@ -54,7 +54,7 @@
 
     </div>
 
-    <div v-if="flats" class="pt-5">
+    <div v-if="flats.length !== 0" class="pt-5">
 
       <div v-if="flats.length !== 0">
         <Card         
