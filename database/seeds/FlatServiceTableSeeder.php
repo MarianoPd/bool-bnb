@@ -15,9 +15,26 @@ class FlatServiceTableSeeder extends Seeder
      */
     public function run()
     {
-        // $flat = Flat::all();
-        // $service_id = Service::all()->id;
+        for($i = 0; $i < 40; $i++){
+            $flat = Flat::inRandomOrder()->first();
 
-        // $flat->services()->attach($service_id);
+            $service_id = Service::inRandomOrder()->first()->id;
+
+            if(!$this->isPresent($service_id,  $flat->services)){
+                
+                $flat->services()->attach($service_id);
+
+            }
+
+        }
+    }
+
+    private function isPresent($newServiceId, $flatServices){
+        $result = false;
+        foreach ($flatServices as $service){
+            if($service->id === $newServiceId) $result = true;
+        }
+
+        return $result;
     }
 }
