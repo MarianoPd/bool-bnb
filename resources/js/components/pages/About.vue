@@ -23,7 +23,8 @@
           <p>Ti presentiamo il team che ha sviluppato dalla A alla Z questo progetto.</p>
           <p>Faremo un po' il giro d'Italia insieme, partiremo dalla Sicilia dove incontreremo Mariano Pidone e Salvatore Sanzone, passando dalla Puglia troviamo Morena Mastromarino, arriviamo a Roma dove c'è Matteo Fabio e infine a Milano troviamo Davide Tavella.</p>
           <p>Di seguito troverai dei link con cui puoi contattare questo mitico gruppo!</p>
-          <div class="links-zone ">
+
+          <div class="links-zone">
             <!-- link linkedin -->
             <ul>
               <li class="links">
@@ -38,34 +39,22 @@
                 
               </li>
               <li class="links">
-                <a href="https://www.linkedin.com/in/matteo-fabio/" class="logo-linkedin-fake">Linkedin</a> <p>Matteo Fabio</p>
+                <p>Matteo Fabio</p>
+                <a href="https://www.linkedin.com/in/matteo-fabio/" class="logo-linkedin-fake">Linkedin</a>
+                <a href="https://github.com/matteofab10" class="logo-github-fake">GitHub</a>
               </li>
               <li class="links"> 
-                <a href="https://www.linkedin.com/in/davide-tavella-363b2820b/" class="logo-linkedin-fake">Linkedin</a> <p>Davide Tavella</p>
+                <p>Davide Tavella</p>
+                <a href="https://www.linkedin.com/in/davide-tavella-363b2820b/" class="logo-linkedin-fake">Linkedin</a> 
+                <a href="https://github.com/Tave23" class="logo-github-fake">GitHub</a>
               </li>
               <li class="links">
-                <a href="https://www.linkedin.com/in/mariano-pidone-215621122/" class="logo-linkedin-fake">Linkedin</a> <p>Mariano Pidone</p>
+                <p>Mariano Pidone</p>
+                <a href="https://www.linkedin.com/in/mariano-pidone-215621122/" class="logo-linkedin-fake">Linkedin</a>
+                <a href="https://github.com/MarianoPd" class="logo-github-fake">GitHub</a> 
               </li>
             </ul>
 
-            <!-- link ?!?! -->
-            <ul>
-              <li class="links">
-                <p>Morena Mastromarino</p>
-              </li>
-              <li class="links">
-                <p>Salvatore Sanzone</p>
-              </li>
-              <li class="links">
-                <a href="https://github.com/matteofab10" class="logo-github-fake">GitHub</a> <p>Matteo Fabio</p>
-              </li>
-              <li class="links"> 
-                <a href="https://github.com/Tave23" class="logo-github-fake">GitHub</a> <p>Davide Tavella</p>
-              </li>
-              <li class="links">
-                <a href="https://github.com/MarianoPd" class="logo-github-fake">GitHub</a> <p>Mariano Pidone</p>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -126,10 +115,11 @@ export default {
 
 .links-zone{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 .links{
   display: flex;
+  justify-content: center;
   p{
     margin-right: 15px;
   }
