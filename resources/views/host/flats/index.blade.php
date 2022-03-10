@@ -5,15 +5,15 @@
     <div class="container">
         
         
-        <div class="row">
-            <div class="col-6">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-6 justify-content-center">
                 @if (count($flats) !== 0)
                     <h1>I tuoi appartamenti</h1>
                 @else
                     <h1>Non hai registrato ancora nessun appartamento</h1>   
                 @endif
             </div>
-            <div class="col-6 d-flex justify-content-end align-items-center">
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
                 <a type="button" class="t2-button mr-2"
                 href="{{ url('/') }}">Torna alla Homepage</a>
                 <a type="button" class="t2-button"
@@ -26,7 +26,7 @@
             <div class="container-card">
 
                 @foreach ($flats as $flat)
-                    <div class="col-3 card mb-5 mr-5 mt-5 t2-card" style="width: 18rem; ">
+                    <div class="col-11 col-md-5 col-lg-3 card mb-5 mr-5 mt-5 t2-card" style="width: 18rem; ">
                         <div class="t2-image pt-3">
                             @if ($flat->cover)                                
                                     <img width="100%" height="250px"

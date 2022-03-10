@@ -44,17 +44,40 @@
     </section>
 
 
-    <div class="promotion-flats">
-      <div id="promotion">appartamenti in promozione!</div>
-    </div>
-    
-  </div>
+    <section>
+      <div class="container pt-5 pb-5 text-center">
+      <h1>Appartamenti in promozione!</h1>
+      
+        <div v-if="flats.length !== 0" class="pt-5">
 
+          <div v-if="flats.length !== 0">
+            <Card         
+              v-for="flat in flats"
+              :key="`flat${flat.id}`"
+              :flat="flat"
+            />
+          </div>
+
+          <!-- risposta in caso di nessun risultato -->
+          <div v-else class="text-center mt-5 mb-5">
+            <h1>Non ci sono risultati per questa ricerca</h1>
+          </div>
+
+        </div>
+      </div>
+      
+    
+    </section>
+</div>
 </template>
 
 <script>
+import Card from '../Card.vue';
 export default {
   name: 'home',
+  components: {
+    Card,    
+  },
   data(){
     return{
       houses: [
@@ -69,6 +92,7 @@ export default {
       ],
       counter: 0,
       searchAddress: '',
+      flats: [],
     }
   },
   methods: {
@@ -78,6 +102,17 @@ export default {
         this.counter = 0;
       }
     },
+
+    getSponsoredFlats(){
+      axios.get('http://127.0.0.1:8000/api/flats/sponsored')
+        .then(res=>{
+          this.flats = res.data;
+          
+        }).catch(e=>{
+          console.log(e);
+        })
+    },
+
     addressClicked(){
         tt.services.fuzzySearch({
             key: 'XiRMXj5sejVWEGY8Ze4M4Fq1PhYyKW4I',
@@ -99,6 +134,7 @@ export default {
   },
   mounted(){
     setInterval(this.carouselPopUp, 4000);
+    this.getSponsoredFlats();
   }
 }
 
@@ -235,9 +271,5 @@ export default {
 
 
 }
-.promotion-flats{
-  width: 100%;
-  height: 100vh;
-  padding: 75px;
-}
+
 </style>

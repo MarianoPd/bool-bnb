@@ -91,7 +91,7 @@ export default {
   },
   data(){
     return{
-      flats: null,
+      flats: [],
       baseUrl: 'http://127.0.0.1:8000',
       page_title: 'Ecco la lista di appartamenti',
       searchAddress: '',

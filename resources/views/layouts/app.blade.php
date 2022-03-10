@@ -30,7 +30,7 @@
 <body>
     <div id="app" >
         <header class="t2-header">
-            <nav class="navbar navbar-expand-md navbar-light shadow-sm t2-navbar">
+            <nav class="navbar navbar-expand-md navbar-dark shadow-sm t2-navbar">
                 <div class="container">
                     <div>
                         <a class="navbar-brand" href="{{ url('/') }}">
@@ -40,7 +40,7 @@
                             Host homepage
                         </a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
     

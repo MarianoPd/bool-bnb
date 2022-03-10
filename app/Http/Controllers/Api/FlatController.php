@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Flat;
 use App\Service;
+use App\Sponsorship;
+use DateTime;
 
 class FlatController extends Controller
 {
@@ -79,5 +81,38 @@ class FlatController extends Controller
           return ($miles * 1.609344);
       
         }
+    }
+
+    public function getSponsoredFlats(){
+        $sponsorships = Sponsorship::all()->sortByDesc('id');
+        $flats = [];
+        $now = new DateTime();
+        foreach($sponsorships as $sponsorship){
+            foreach($sponsorship->flats as $flat){
+                $spoDate = new DateTime($flat->pivot->created_at);
+                
+                if(!$this->flatPresent($flat,$flats) && ($sponsorship->duration > ( $now->diff($spoDate)->format("%d") ))){
+                    $flats[] = $flat;
+                }
+            }
+        }
+
+        foreach($flats as $flat){
+            if ($flat->cover) {
+                $flat->cover = url('storage/' . $flat->cover);
+            }else{
+                $flat->cover = url('placeholder-image/placeholder.jpeg');
+            }
+        }
+        return $flats;
+        
+    }
+
+    private function flatPresent($newFlat, $flats){
+        $result = false;
+        foreach($flats as $flat){
+            if($flat->id === $newFlat->id) $result = true;
+        }
+        return $result;
     }
 }
