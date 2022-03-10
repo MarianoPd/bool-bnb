@@ -18,7 +18,7 @@
             <div v-if="flat.title" class="p-3">
 
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12 col-md-8 mb-5" >
                         <div class="img-cont">
                             <img :src="flat.cover" alt="">
                         </div>
@@ -64,7 +64,7 @@
                         </div>
                         
                     </div>
-                    <div class="col-4 border p-3 overflow-hidden">
+                    <div class="col-12 col-md-4 border p-3 overflow-hidden mb-5">
 
                         <!-- <div class="border-left">
                             <h4 class="ml-3">From</h4>

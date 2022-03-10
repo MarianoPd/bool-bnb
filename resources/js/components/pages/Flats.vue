@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div v-if="flats">
+    <div v-if="flats" class="pt-5">
 
       <div v-if="flats.length !== 0">
         <Card         
@@ -161,10 +161,17 @@ export default {
 
   h1{
     text-align: center;
-    font-size: 6rem;
+    font-size: 6vw;
     z-index: 1;
     color: white;
     opacity: 0.9;
+  }
+
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 10vw;
+      transition: font-size 1s;
+    }
   }
 
   .video-container{

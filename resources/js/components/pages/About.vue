@@ -12,25 +12,30 @@
       <h1>Chi Siamo</h1>
     </section>
     
-    <div class="container">
+    <div class="container text-center">
       <div class="row">
-        <div class="col-12 border-bottom">
+        <div class="col-12  border-bottom">
           <h1 class="my-3">Ciao caro visitatore!</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col-8 mt-3">
+      <div class="row ">
+        <div class="col-12 col-md-8 offset-md-2 mt-3 text-center">
           <p>Ti presentiamo il team che ha sviluppato dalla A alla Z questo progetto.</p>
           <p>Faremo un po' il giro d'Italia insieme, partiremo dalla Sicilia dove incontreremo Mariano Pidone e Salvatore Sanzone, passando dalla Puglia troviamo Morena Mastromarino, arriviamo a Roma dove c'è Matteo Fabio e infine a Milano troviamo Davide Tavella.</p>
           <p>Di seguito troverai dei link con cui puoi contattare questo mitico gruppo!</p>
-          <div class="links-zone">
+          <div class="links-zone ">
             <!-- link linkedin -->
             <ul>
               <li class="links">
-                <a href="https://www.linkedin.com/in/morena-mastromarino/" class="logo-linkedin-fake">Linkedin</a><p>Morena Mastromarino</p>
+                <p>Morena Mastromarino</p>
+                <a href="https://www.linkedin.com/in/morena-mastromarino/" class="logo-linkedin-fake">Linkedin</a>
+                <a href="https://github.com/MorenaMastromarino" class="logo-github-fake">GitHub</a>
               </li>
               <li class="links">
-                <a href="https://www.linkedin.com/in/salvatore-sanzone-751304219/" class="logo-linkedin-fake">Linkedin</a><p>Salvatore Sanzone</p>
+                <p>Salvatore Sanzone</p>
+                <a href="https://www.linkedin.com/in/salvatore-sanzone-751304219/" class="logo-linkedin-fake">Linkedin</a>
+                <a href="https://github.com/salvosanzone" class="logo-github-fake">GitHub</a>
+                
               </li>
               <li class="links">
                 <a href="https://www.linkedin.com/in/matteo-fabio/" class="logo-linkedin-fake">Linkedin</a> <p>Matteo Fabio</p>
@@ -46,10 +51,10 @@
             <!-- link ?!?! -->
             <ul>
               <li class="links">
-                <a href="https://github.com/MorenaMastromarino" class="logo-github-fake">GitHub</a><p>Morena Mastromarino</p>
+                <p>Morena Mastromarino</p>
               </li>
               <li class="links">
-                <a href="https://github.com/salvosanzone" class="logo-github-fake">GitHub</a><p>Salvatore Sanzone</p>
+                <p>Salvatore Sanzone</p>
               </li>
               <li class="links">
                 <a href="https://github.com/matteofab10" class="logo-github-fake">GitHub</a> <p>Matteo Fabio</p>
@@ -121,9 +126,13 @@ export default {
 
 .links-zone{
   display: flex;
+  justify-content: space-around;
 }
 .links{
   display: flex;
+  p{
+    margin-right: 15px;
+  }
 }
 
 .logo-linkedin-fake{
