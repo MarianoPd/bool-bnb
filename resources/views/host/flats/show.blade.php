@@ -10,6 +10,9 @@
             <button class="t2-button ">
                 <a href="{{ route('host.flats.index')}}">I miei appartamenti</a>
             </button>
+            <button class="t2-button ml-5">
+                <a href="{{ route('host.plans', $flat->slug)}}">Sponsorizza il tuo appartamento</a>
+            </button>
         </div>
 
         @if ($flat->cover)

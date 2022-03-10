@@ -25,4 +25,13 @@ Route::namespace('Api')
         Route::get('/flats/search/{lat}/{lon}', 'FlatController@getFlatsBySearch');
 
         Route::post('detail', 'MessageContoller@store');
+
+        Route::get('sponsorships', 'SponsorshipController@index');
+
+        Route::get('orders/generate','Orders\OrderController@generate');
+        Route::post('orders/make/payment','Orders\OrderController@makePayment');
+
+        
     });
+
+    

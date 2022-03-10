@@ -26,7 +26,10 @@ Route::middleware('auth')
         ->prefix('host')
         ->group(function(){
             Route::get('/','HomeController@index')->name('index');
+            Route::get('/plans/{slug}', 'PlansController@index')->name('plans');
+            Route::get('/plans/payment/{slug}/{plan}', 'PlansController@goToPayment')->name('payment');
             Route::resource('/flats','FlatController');
+            
         });
 
 

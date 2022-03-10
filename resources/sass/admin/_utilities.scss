@@ -12,6 +12,7 @@
         text-decoration: none;
         background-color: $primary-color;
         transition: all 0.3s;
+        cursor: pointer;
         //box-shadow: 0  1px 4px rgba($color: #000000, $alpha: 0.7);
     }
     a{
@@ -20,6 +21,7 @@
         &:hover{
             color: white;
             text-decoration: none;
+            cursor: pointer;
         }
     }
 }
@@ -59,4 +61,11 @@
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 30px;
+}
+
+.t2-image{
+    img{
+        max-height: 180px;
+        object-fit: cover;
+    }
 }
