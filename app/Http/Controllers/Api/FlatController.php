@@ -84,7 +84,7 @@ class FlatController extends Controller
     }
 
     public function getSponsoredFlats(){
-        $sponsorships = Sponsorship::sortByDesc('id');
+        $sponsorships = Sponsorship::all()->sortByDesc('id');
         $flats = [];
         $now = new DateTime();
         
