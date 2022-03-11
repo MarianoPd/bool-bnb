@@ -50,7 +50,7 @@ class PlansController extends Controller
         $data = $requestForm->all();
         $token = $data['token'];
         $spoName = $data['spoName'];
-        $card = $data['card'];
+        //$card = $data['card'];
         $flat = Flat::where('slug',$data['flatSlug'])->first();
         $sponsorship = Sponsorship::where('name', $spoName)->first();
         $flat->sponsorships()->attach($sponsorship->id);

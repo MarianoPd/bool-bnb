@@ -100,10 +100,11 @@ export default {
   },
 
   methods:{
-    getFlats(){
-      axios.get(this.baseUrl + '/api/flats')
+    getFlats(page = 1){
+      axios.get(this.baseUrl + '/api/flats' + '?page=' + page)
       .then(res =>{
-        this.flats = res.data;
+        
+        this.flats = res.data.data;
         console.log('Appartamenti:', this.flats);
       });
     },
@@ -132,9 +133,9 @@ export default {
     },
 
     getSearch(lat,lon){
-      axios.get(this.baseUrl + '/api/flats/search/' + lat + '/' + lon)
+      axios.get(this.baseUrl + '/api/flats/search/'+ lat + '/' + lon )
         .then(res =>{
-          
+          console.log(res);
           this.flats = res.data;
           console.log(res.data);
         });
@@ -173,7 +174,7 @@ export default {
 
   @media only screen and (max-width: 768px) {
     h1 {
-      font-size: 10vw;
+      font-size: 13vw;
       transition: font-size 1s;
     }
   }
@@ -183,7 +184,12 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-
+    
+    video{
+      margin-left: 50vw;
+      transform: translate(-50%);
+      
+    }
     .overlay{
       position: absolute;
       top: 0;

@@ -36,7 +36,7 @@
         <div>
           <span @click="isActive = !isActive" class="mx-3">
             <!-- <a href="http://127.0.0.1:8000/appartamenti">BOOK A ROOM</a> -->
-            <a href="#promotion">PROMOZIONI</a>
+            <a href="#promotion">In Primo Piano</a>
           </span>
         </div>
       </div>
@@ -44,11 +44,11 @@
     </section>
 
 
-    <section>
-      <div class="container pt-5 pb-5 text-center">
+    <section  id="promotion">
+      <div  class="container pt-5 pb-5 text-center">
       <h1>Appartamenti in promozione!</h1>
       
-        <div v-if="flats.length !== 0" class="pt-5">
+        <div v-if="flats.length !== 0"  class="pt-5">
 
           <div v-if="flats.length !== 0">
             <Card         

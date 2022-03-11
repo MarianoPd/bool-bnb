@@ -1,8 +1,10 @@
 <template>
 
-  <footer class="d-flex justify-content-between">
-    <div>BollBnB - Made By Team 2</div>
+  <footer class=" ">
+    <div class="container d-flex justify-content-between align-items-center my-container">
+      <div>BollBnB - Made By Team 2</div>
     <div>Made in Italy</div>
+    </div>
   </footer>
 
 </template>
@@ -22,5 +24,8 @@ footer{
   
   color: white;
   background-color: rgb(46, 45, 45);
+  .my-container{
+    height: 100%;
+  }
 }
 </style>

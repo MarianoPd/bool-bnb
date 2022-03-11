@@ -6,7 +6,7 @@
                 <div class="col-4">
                     <div class="logo">
                         <a href="http://127.0.0.1:8000/">
-                            <span>BoolBnB</span>
+                            <img src="/images/Airbnb-symbol.png" alt="LOGO" >
                         </a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ header{
     z-index: 99;
     width: 100%;
     padding: 20px 0;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
     .menu {
 
@@ -88,8 +88,8 @@ header{
     .logo{
 
         img{
-            width: 100%;
-            height: 100%;
+            width: 100px;
+            //height: 100%;
         }
     }
 

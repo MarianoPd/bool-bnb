@@ -12,7 +12,7 @@ use DateTime;
 class FlatController extends Controller
 {
     public function index(){
-        $flats = Flat::all();
+        $flats = Flat::paginate(5);
 
         //dd($flats);
         $flats->each(function($flat){
@@ -84,14 +84,15 @@ class FlatController extends Controller
     }
 
     public function getSponsoredFlats(){
-        $sponsorships = Sponsorship::all()->sortByDesc('id');
+        $sponsorships = Sponsorship::sortByDesc('id');
         $flats = [];
         $now = new DateTime();
+        
         foreach($sponsorships as $sponsorship){
             foreach($sponsorship->flats as $flat){
                 $spoDate = new DateTime($flat->pivot->created_at);
                 
-                if(!$this->flatPresent($flat,$flats) && ($sponsorship->duration > ( $now->diff($spoDate)->format("%d") ))){
+                if(!$this->flatPresent($flat,$flats) && ($sponsorship->duration > ( $now->diff($spoDate)->format("%h") ))){
                     $flats[] = $flat;
                 }
             }
