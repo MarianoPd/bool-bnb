@@ -65,7 +65,7 @@
 
         </div>
       </div>
-      <div class="d-flex justify-content-center">
+      <!-- <div class="d-flex justify-content-center">
         <div class="pagination" v-if="paginate">
             <button
                 @click="getApi(pagination.current - 1)"
@@ -86,7 +86,7 @@
                 :disabled = "pagination.current === pagination.last"
             > &#8594; </button>
         </div>
-      </div>
+      </div> -->
     
     </section>
 </div>
@@ -289,6 +289,13 @@ export default {
     }
 
   }
+  .pagination{
+            text-align: center;
+            button{
+                cursor: pointer;
+                padding: 5px;
+            }
+        }
 
 
 }

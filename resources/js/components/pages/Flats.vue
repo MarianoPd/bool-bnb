@@ -54,7 +54,7 @@
 
     </div>
 
-    <div v-if="flats.length !== 0" class="pt-5">
+    <div v-if="flats[0] !== 1" class="pt-5">
 
       <div v-if="flats.length !== 0">
         <Card         
@@ -65,7 +65,7 @@
       </div>
 
       <!-- risposta in caso di nessun risultato -->
-      <div v-else class="text-center mt-5 mb-5">
+      <div v-else class="text-center mt-5 mb-5 pb-5">
         <h1>Non ci sono risultati per questa ricerca</h1>
       </div>
 
@@ -95,15 +95,17 @@ export default {
       baseUrl: 'http://127.0.0.1:8000',
       page_title: 'Ecco la lista di appartamenti',
       searchAddress: '',
+      
     }
     
   },
 
   methods:{
     getFlats(page = 1){
+      this.flats.push(1);
       axios.get(this.baseUrl + '/api/flats' + '?page=' + page)
       .then(res =>{
-        
+        this.flats = [];
         this.flats = res.data.data;
         console.log('Appartamenti:', this.flats);
       });
@@ -133,11 +135,13 @@ export default {
     },
 
     getSearch(lat,lon){
+      this.flats.push(1);
       axios.get(this.baseUrl + '/api/flats/search/'+ lat + '/' + lon )
         .then(res =>{
-          console.log(res);
+          this.flats = [];
           this.flats = res.data;
           console.log(res.data);
+          this.searchAddress = '';
         });
     }
   },
