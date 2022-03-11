@@ -65,7 +65,28 @@
 
         </div>
       </div>
-      
+      <div class="d-flex justify-content-center">
+        <div class="pagination" v-if="paginate">
+            <button
+                @click="getApi(pagination.current - 1)"
+                :disabled = "pagination.current === 1"
+            > &#8592; </button>
+
+            <button
+                v-for="i in pagination.last"
+                :key="i"
+                @click="getApi(i)"
+                :disabled = "pagination.current === i"
+            >
+                {{i}}
+            </button>
+
+            <button
+                @click="getApi(pagination.current + 1)"
+                :disabled = "pagination.current === pagination.last"
+            > &#8594; </button>
+        </div>
+      </div>
     
     </section>
 </div>
