@@ -2,7 +2,7 @@
 
 
   <div class="content">
-    <section class="flats mb-5">
+    <section class="flats ">
       <div class="video-container">
         <video autoplay muted loop>
           <source src="/img/video.mp4" type="video/mp4">
@@ -35,7 +35,8 @@
         </div>
       </div>
     </div> -->
-    <div class="d-flex justify-content-center mb-4">
+    <section class="t2-background pb-5 pt-5">
+      <div class="d-flex justify-content-center mb-4 ">
       <div class="wrap mr-5">
         <div class="search">
             <input class="searchTerm" placeholder="Dove vuoi andare?"
@@ -57,11 +58,13 @@
     <div v-if="flats[0] !== 1" class="pt-5">
 
       <div v-if="flats.length !== 0">
-        <Card         
+        <div class="container ">
+          <Card         
           v-for="flat in flats"
           :key="`flat${flat.id}`"
           :flat="flat"
         />
+        </div>
       </div>
 
       <!-- risposta in caso di nessun risultato -->
@@ -75,8 +78,9 @@
       <Loading />
     </div>
 
-  </div>
   
+    </section>
+</div>
 
 </template>
 
@@ -154,7 +158,7 @@ export default {
 
 <style lang="scss" scoped>
 .content{
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
 }
 
 .flats{

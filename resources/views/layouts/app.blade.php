@@ -27,7 +27,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/admin/style.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="t2-background">
     <div id="app" >
         <header class="t2-header">
             <nav class="navbar navbar-expand-md navbar-dark shadow-sm t2-navbar">

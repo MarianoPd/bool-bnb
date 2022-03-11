@@ -1,8 +1,8 @@
 <template>
-  <section class="card">
+  <section class="card mb-3">
     <div class="container">
 
-      <div class="row border-bottom mt-3 pb-3">
+      <div class="row mt-3 pb-3">
         <div class="col-12 col-md-4">
           <div class="img-cont">
             <img class="w-100 w-md-100 h-200px" :src="flat.cover">
@@ -81,11 +81,13 @@ export default {
 
 .card{
   border: none;
-
+  border-radius: 10px;
+  box-shadow: 0  2px 7px rgba($color: #000000, $alpha: 0.7);
   .img-cont{
-    //max-width: 100px;
+   
     img{
       object-fit: cover;
+      border-radius: 10px;
     }
   }
 }

@@ -44,8 +44,8 @@
     </section>
 
 
-    <section  id="promotion">
-      <div  class="container pt-5 pb-5 text-center">
+    <section  id="promotion" class="t2-background">
+      <div  class="container pt-5 pb-5 text-center ">
       <h1>I migliori appartamenti scelti soloper te!</h1>
       
         <div v-if="flats.length !== 0"  class="pt-5">
@@ -162,6 +162,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .home{
   position: relative;
   display: flex;
@@ -296,7 +297,7 @@ export default {
                 padding: 5px;
             }
         }
-
+  
 
 }
 

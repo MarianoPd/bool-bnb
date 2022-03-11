@@ -7,3 +7,17 @@ html {
     scroll-behavior: smooth;
 }
 
+.t2-background{
+    background-image: linear-gradient(
+    125deg,
+    hsl(0deg 0% 95%) 0%,
+    hsl(45deg 8% 92%) 1%,
+    hsl(45deg 11% 90%) 7%,
+    hsl(45deg 13% 87%) 20%,
+    hsl(45deg 15% 84%) 41%,
+    hsl(32deg 24% 82%) 62%,
+    hsl(22deg 32% 80%) 78%,
+    hsl(12deg 37% 80%) 90%,
+    hsl(0deg 37% 79%) 100%
+  );
+  }
