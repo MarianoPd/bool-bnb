@@ -90,18 +90,20 @@
             
 
             {{-- bottone elimina --}}
-            
-            <form onsubmit="return confirm('Questa azione cancellerà definitivamente questo appartamento e tutti i sui dati. Sei sicuro di procedere?')"
-            action="{{route('host.flats.destroy', $flat)}}" method="POST" class="mt-5 mb-5">
-                @csrf
-                @method('DELETE')
+            <div>
                 <button class="t2-button mr-2">
                     <a href="{{route('host.flats.edit', $flat)}}">Modifica appartamento</a>
                 </button>
-                <button type="submit" class="t2-button">
-                    Elimina appartamento
-                </button>
-            </form>     
+                <form onsubmit="return confirm('Questa azione cancellerà definitivamente questo appartamento e tutti i sui dati. Sei sicuro di procedere?')"
+                action="{{route('host.flats.destroy', $flat)}}" method="POST" class="mt-5 mb-5">
+                    @csrf
+                    @method('DELETE')
+                    
+                    <button type="submit" class="t2-button">
+                        Elimina appartamento
+                    </button>
+                </form>      
+            </div>   
 
         </div>
         <div>
