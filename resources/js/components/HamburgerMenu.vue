@@ -1,7 +1,10 @@
 <template>
   <div>
 
-    <div class="hamburger-menu-btn">
+    <div 
+      @click="$emit('changeColor')"
+      class="hamburger-menu-btn"
+    >
       <div>
         <i
             @click="myFunction"  
@@ -12,19 +15,35 @@
           class="hamburger-menu"
           :class="{ menuAttivo: menuActive }"
         >
+        <div class="container">
           <div class="hamburger-menu-body">
-              <div class="item">Home</div>
-              <div class="item">
-                  <a href="http://127.0.0.1:8000/appartamenti">
-                      Appartamenti
-                  </a>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                  <div class="item">
+                    <a href="http://127.0.0.1:8000">
+                        Home
+                    </a>
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <div class="item">
+                    <a href="http://127.0.0.1:8000/appartamenti">
+                        Appartamenti
+                    </a>
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <div class="item">
+                    <a href="http://127.0.0.1:8000/chi-siamo">
+                        Chi Siamo
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="item">
-                  <a href="http://127.0.0.1:8000/chi-siamo">
-                      Chi Siamo
-                  </a>
-              </div>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -72,43 +91,41 @@ export default {
 
 .hamburger-menu{
   // display: none;
-  transform: scale(0);
   position: fixed;
-  left: 50%;
-  right: 10%;
-  padding: 10px;
-  background-color: white;
-  border-radius: 10px;
-  text-align: start;
-  transition: 0.5s;
-  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+  top: 75px;
+  left: -200%;
+  bottom: 0;
+  background-color: black;
+  transition: ease-in-out 0.5s;
+
 
   &.menuAttivo{
     // display: block;
-    transform: scale(1);
-
+    left: 0;
+    right: 0;
   }
-
 
   .hamburger-menu-body {
 
     .item {
-      color: black;
+      color: white;
 
       a {
-        color: black !important;
+        font-size: 2rem;
+        color: white !important;
 
         &:hover {
-        text-decoration: none;
-        cursor: pointer;
-        background-color: rgb(248, 242, 242);
-      }
+          text-decoration: none;
+          cursor: pointer;
+          color: rgb(230, 215, 215) !important;
+
+        }
 
       }
 
       &:hover {
         cursor: pointer;
-        background-color: rgb(248, 242, 242);
+        color: rgb(230, 215, 215) !important;
       }
 
     }

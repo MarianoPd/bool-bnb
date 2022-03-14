@@ -1,6 +1,9 @@
 <template>
 
-    <header class="container-fluid d-flex align-items-center nav-bar">
+    <header
+        :class="{ active: isActive }" 
+        class="container-fluid d-flex align-items-center nav-bar"
+    >
         <div class="container">
             <div class="row">
                 <div class="col-4">
@@ -30,7 +33,9 @@
                         <a href="http://127.0.0.1:8000/host">Diventa Host</a>
                     </div>
 
-                <HamburgerMenu />
+                <HamburgerMenu
+                    @changeColor = "colorHeader"
+                />
 
                 </div>
             </div>
@@ -46,6 +51,16 @@ export default {
   components: {
     HamburgerMenu
   },
+  data() {
+      return {
+          isActive: false
+      }
+  },
+  methods: {
+      colorHeader() {
+        this.isActive = !this.isActive;
+      }
+  }
   
 }
 
@@ -67,12 +82,20 @@ export default {
 <style lang="scss" scoped>
 
 header{
+    display: none;
     position: fixed;
     top: 0;
     z-index: 99;
     width: 100%;
     padding: 20px 0;
     //text-transform: uppercase;
+
+    &.active {
+        // background-color: rgb(46, 45, 45);
+        background-color: black;
+
+
+    }
 
     .menu {
 
@@ -110,8 +133,9 @@ header{
 }
 
 .nav-hide{
-    background-color: rgb(46, 45, 45);
-    transition: 0.5s;
+    // background-color: rgb(46, 45, 45);
+    background-color: black;
+    transition: ease-out 0.8s;
 }
 
 @media all and (max-width: 995px) {

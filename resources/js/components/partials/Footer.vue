@@ -23,7 +23,8 @@ footer{
   //position: absolute;
   
   color: white;
-  background-color: rgb(46, 45, 45);
+  // background-color: rgb(46, 45, 45);
+  background-color: black;
   .my-container{
     height: 100%;
   }
