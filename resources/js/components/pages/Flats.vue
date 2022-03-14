@@ -55,7 +55,10 @@
 
     </div>
 
-    <div v-if="flats[0] !== 1" class="pt-5">
+    <div v-if="flats[0] === 1">
+      <Loading />
+    </div>
+    <div v-else class="pt-5">
 
       <div v-if="flats.length !== 0">
         <div class="container ">
@@ -74,9 +77,7 @@
 
     </div>
 
-    <div v-else>
-      <Loading />
-    </div>
+    
 
   
     </section>
@@ -109,6 +110,7 @@ export default {
       this.flats.push(1);
       axios.get(this.baseUrl + '/api/flats' + '?page=' + page)
       .then(res =>{
+        console.log('flats',this.flats[0]);
         this.flats = [];
         this.flats = res.data.data;
         console.log('Appartamenti:', this.flats);
@@ -132,7 +134,7 @@ export default {
               console.log(latitude, longitude);
               this.getSearch(latitude, longitude);
             }
-            this.flats = [];
+            
             
 
         });
@@ -142,6 +144,7 @@ export default {
       this.flats.push(1);
       axios.get(this.baseUrl + '/api/flats/search/'+ lat + '/' + lon )
         .then(res =>{
+          console.log('flats',this.flats[0]);
           this.flats = [];
           this.flats = res.data;
           console.log(res.data);
