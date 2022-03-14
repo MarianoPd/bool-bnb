@@ -44,7 +44,7 @@
     </section>
 
 
-    <section  id="promotion" class="t2-background">
+    <section  id="promotion" class="">
       <div  class="container pt-5 pb-5 text-center ">
       <h1>I migliori appartamenti scelti solo per te!</h1>
       

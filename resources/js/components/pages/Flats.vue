@@ -55,7 +55,7 @@
 
     </div>
 
-    <div v-if="flats[0] === 1">
+    <div v-if="loading">
       <Loading />
     </div>
     <div v-else class="pt-5">
@@ -100,19 +100,18 @@ export default {
       baseUrl: 'http://127.0.0.1:8000',
       page_title: 'Ecco la lista di appartamenti',
       searchAddress: '',
-      
+      loading: false,
     }
     
   },
 
   methods:{
     getFlats(page = 1){
-      this.flats.push(1);
+      this.loading = true;
       axios.get(this.baseUrl + '/api/flats' + '?page=' + page)
       .then(res =>{
-        console.log('flats',this.flats[0]);
-        this.flats = [];
         this.flats = res.data.data;
+        this.loading = false;
         console.log('Appartamenti:', this.flats);
       });
     },
@@ -141,13 +140,13 @@ export default {
     },
 
     getSearch(lat,lon){
-      this.flats.push(1);
+      this.loading = true;
       axios.get(this.baseUrl + '/api/flats/search/'+ lat + '/' + lon )
         .then(res =>{
-          console.log('flats',this.flats[0]);
-          this.flats = [];
+          
           this.flats = res.data;
           console.log(res.data);
+          this.loading = false;
           this.searchAddress = '';
         });
     }

@@ -201,7 +201,7 @@ export default {
 // }
 
 .header-bg {
-    background-color: rgb(46, 45, 45);
+    background-color: black;
     height: 70px;
     width: 100%;
 }

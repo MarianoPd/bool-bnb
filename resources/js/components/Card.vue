@@ -24,7 +24,7 @@
           <h2>250$</h2> -->
           <!-- <div @click="isActive = true" class="btn btn-outline-dark">More Info</div> -->
           <div @click="isActive = true" class="t2-button mt-5 mb-5">
-            <router-link  :to="{ name:'detail', query: { slug: flat.slug} }">More Info</router-link>
+            <router-link  :to="{ name:'detail', query: { slug: flat.slug} }">Dettagli</router-link>
           </div>
         </div>
       </div>
