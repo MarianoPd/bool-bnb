@@ -13,9 +13,15 @@
                     <h1>Non hai registrato ancora nessun appartamento</h1>   
                 @endif
             </div>
+
             <div class="col-12 col-md-6 d-flex justify-content-md-end align-items-center">
-                <a type="button" class="t2-button bg-light"
-                href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
+                {{-- <button class="t2-button mr-2 ">
+                    <a href="{{ url('/') }}">Torna alla Homepage</a>
+                </button> --}}
+                <button class="t2-button">
+                    <a href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
+                </button>
+
             </div>
         </div>
 
