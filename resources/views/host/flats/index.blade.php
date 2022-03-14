@@ -14,19 +14,19 @@
                 @endif
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                <a type="button" class="t2-button mr-2"
+                <a type="button" class="t2-button mr-2 bg-light"
                 href="{{ url('/') }}">Torna alla Homepage</a>
-                <a type="button" class="t2-button"
+                <a type="button" class="t2-button bg-light"
                 href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
             </div>
         </div>
 
 
-        <div class="row d-flex align-content-between flex-wrap">
-            <div class="container-card">
+        <div class="row d-flex   mb-5 flex-wrap  ">
+            
 
                 @foreach ($flats as $flat)
-                    <div class="col-11 col-md-5 col-lg-3 card mb-5 mr-5 mt-5 t2-card" style="width: 18rem; ">
+                    <div class="col-11 col-md-5 col-lg-3 t2-card mt-5" >
                         <div class="t2-image pt-3">
                             @if ($flat->cover)                                
                                     <img width="100%" height="250px"
@@ -40,13 +40,13 @@
                             <h3 class="card-title">{{$flat->title}}</h3>
                             <p class="card-text">{{$flat->address}}, {{$flat->city}}, {{$flat->province}}</p>
                             
-                            <a href="{{ route('host.flats.show', $flat->slug) }}" class="btn btn-primary">Dettagli</a>
-                            <a href="{{route('host.plans', $flat->slug)}}" class="btn btn-warning">Sponsorizza</a>
+                            <a href="{{ route('host.flats.show', $flat->slug) }}" class="t2-button">Dettagli</a>
+                            <a href="{{route('host.plans', $flat->slug)}}" class="t2-button ml-3">Sponsorizza</a>
 
                         </div>
                     </div>
                 @endforeach
-            </div>
+            
         </div>
     </div>
     

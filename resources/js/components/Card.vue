@@ -1,9 +1,9 @@
 <template>
-  <section class="card">
-    <div class="container">
+  <section class="card mb-3 ">
+    <div class="container ">
 
-      <div class="row border-bottom mt-3 pb-3">
-        <div class="col-12 col-md-4">
+      <div class="row mt-3  ">
+        <div class="col-12 col-md-4 my-card">
           <div class="img-cont">
             <div class="overlay"></div>
             <img class="w-100 w-md-100 h-200px" :src="flat.cover">
@@ -23,7 +23,7 @@
           <!-- <h2>A partire da</h2>
           <h2>250$</h2> -->
           <!-- <div @click="isActive = true" class="btn btn-outline-dark">More Info</div> -->
-          <div @click="isActive = true" class="t2-button mt-5">
+          <div @click="isActive = true" class="t2-button mt-5 mb-5">
             <router-link  :to="{ name:'detail', query: { slug: flat.slug} }">More Info</router-link>
           </div>
         </div>
@@ -69,6 +69,18 @@ export default {
 
 <style lang="scss" scoped>
 
+.my-card{
+  height: 230px;
+  .img-cont{
+    height: 92%;
+    img{
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+    }
+  }
+}
+
 .popup{
   display: none;
   // transform: scale(0);
@@ -82,13 +94,17 @@ export default {
 
 .card{
   border: none;
-
+  border-radius: 10px;
+  box-shadow: 0  2px 7px rgba($color: #000000, $alpha: 0.7);
   .img-cont{
+
     position: relative;
     //max-width: 100px;
+
     img{
       opacity: 0.7;
       object-fit: cover;
+
       border-radius: 5px;
       box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
     }
@@ -100,6 +116,7 @@ export default {
       height: 100%;
       border-radius: 5px;
       background-color: rgba($color: #000000, $alpha: 0.5);
+
     }
   }
 }

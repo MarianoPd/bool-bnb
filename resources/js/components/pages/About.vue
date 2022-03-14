@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div class="">
 
     <section class="about">
       <div class="video-container">
@@ -12,7 +12,8 @@
       <h1>Chi Siamo</h1>
     </section>
     
-    <div class="container text-center">
+    <section class="">
+      <div class="container text-center ">
       <div class="row">
         <div class="col-12  border-bottom">
           <h1 class="my-3">Ciao caro visitatore!</h1>
@@ -59,6 +60,7 @@
         </div>
       </div>
     </div>
+    </section>
   </div>
 
 </template>
