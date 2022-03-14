@@ -46,7 +46,7 @@
 
     <section  id="promotion" class="t2-background">
       <div  class="container pt-5 pb-5 text-center ">
-      <h1>I migliori appartamenti scelti soloper te!</h1>
+      <h1>I migliori appartamenti scelti solo per te!</h1>
       
         <div v-if="flats.length !== 0"  class="pt-5">
 
