@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="t2-card">
+        <div class="t2-card mb-5">
             <div class="card-header">
                 <h1>Modifica</h1>
             </div>

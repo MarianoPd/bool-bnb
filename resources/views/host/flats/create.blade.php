@@ -8,7 +8,7 @@
                 <h1>Aggiungi Appartamento</h1>
 
             </div>
-            <div class="card-body">
+            <div class="card-body mb-5">
 
                 <form action="{{route('host.flats.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf

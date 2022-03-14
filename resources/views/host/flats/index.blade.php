@@ -14,10 +14,14 @@
                 @endif
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                <a type="button" class="t2-button mr-2 bg-light"
-                href="{{ url('/') }}">Torna alla Homepage</a>
-                <a type="button" class="t2-button bg-light"
-                href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
+                {{-- <button class="t2-button mr-2 ">
+                    <a href="{{ url('/') }}">Torna alla Homepage</a>
+                </button> --}}
+                <button class="t2-button mr-2 ">
+                    <a href="{{ route('host.flats.create')}}">Aggiungi appartamento</a>
+                </button>
+                
+                
             </div>
         </div>
 
@@ -26,7 +30,7 @@
             
 
                 @foreach ($flats as $flat)
-                    <div class="col-11 col-md-5 col-lg-3 t2-card mt-5" >
+                    <div class="col-11 col-md-5 col-lg-3 t2-card-2 mt-5" >
                         <div class="t2-image pt-3">
                             @if ($flat->cover)                                
                                     <img width="100%" height="250px"
