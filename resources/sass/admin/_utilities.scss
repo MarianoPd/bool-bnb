@@ -14,15 +14,15 @@
         transition: all 0.3s;
         cursor: pointer;
         //box-shadow: 0  1px 4px rgba($color: #000000, $alpha: 0.7);
-    }
-    a{
-        text-decoration: none;
-        color: $primary-color;
-        &:hover{
+        a {
             color: white;
             text-decoration: none;
             cursor: pointer;
         }
+    }
+    a{
+        text-decoration: none;
+        color: $primary-color;
     }
 }
 
@@ -38,8 +38,7 @@
     border-radius: 20px;
     box-shadow: 0  2px 7px rgba($color: #000000, $alpha: 0.7);
     background-color: white;
-    margin-right: calc(25% / 3 );
-    
+    // margin-right: calc(25% / 3 );
 }
 
 .t2-form-control{
