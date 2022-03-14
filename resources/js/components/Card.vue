@@ -1,9 +1,9 @@
 <template>
-  <section class="card mb-3">
-    <div class="container">
+  <section class="card mb-3 ">
+    <div class="container ">
 
-      <div class="row mt-3 pb-3">
-        <div class="col-12 col-md-4">
+      <div class="row mt-3  ">
+        <div class="col-12 col-md-4 my-card">
           <div class="img-cont">
             <img class="w-100 w-md-100 h-200px" :src="flat.cover">
 
@@ -22,7 +22,7 @@
           <!-- <h2>A partire da</h2>
           <h2>250$</h2> -->
           <!-- <div @click="isActive = true" class="btn btn-outline-dark">More Info</div> -->
-          <div @click="isActive = true" class="t2-button mt-5">
+          <div @click="isActive = true" class="t2-button mt-5 mb-5">
             <router-link  :to="{ name:'detail', query: { slug: flat.slug} }">More Info</router-link>
           </div>
         </div>
@@ -67,6 +67,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.my-card{
+  height: 230px;
+  .img-cont{
+    height: 92%;
+    img{
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+    }
+  }
+}
 
 .popup{
   display: none;
