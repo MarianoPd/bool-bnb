@@ -5,6 +5,7 @@
       <div class="row mt-3  ">
         <div class="col-12 col-md-4 my-card">
           <div class="img-cont">
+            <div class="overlay"></div>
             <img class="w-100 w-md-100 h-200px" :src="flat.cover">
 
           </div>
@@ -96,10 +97,26 @@ export default {
   border-radius: 10px;
   box-shadow: 0  2px 7px rgba($color: #000000, $alpha: 0.7);
   .img-cont{
-   
+
+    position: relative;
+    //max-width: 100px;
+
     img{
+      opacity: 0.7;
       object-fit: cover;
-      border-radius: 10px;
+
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+
     }
   }
 }
