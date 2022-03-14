@@ -44,8 +44,8 @@
                             <h3 class="card-title">{{$flat->title}}</h3>
                             <p class="card-text">{{$flat->address}}, {{$flat->city}}, {{$flat->province}}</p>
                             
-                            <a href="{{ route('host.flats.show', $flat->slug) }}" class="t2-button">Dettagli</a>
-                            <a href="{{route('host.plans', $flat->slug)}}" class="t2-button ml-3">Sponsorizza</a>
+                            <a href="{{ route('host.flats.show', $flat->slug) }}" class="t2-button mr-3 mb-2 d-inline-block">Dettagli</a>
+                            <a href="{{route('host.plans', $flat->slug)}}" class="t2-button d-inline-block">Sponsorizza</a>
 
                         </div>
                     </div>

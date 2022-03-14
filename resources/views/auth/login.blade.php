@@ -56,12 +56,6 @@
                                 <button type="submit" class="t2-button">
                                     Accedi
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        Hai dimenticato la Password?
-                                    </a>
-                                @endif
                             </div>
                         </div>
 
