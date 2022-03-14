@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-4 d-flex justify-content-end">
                     <div class="host">
-                        <a href="http://127.0.0.1:8000/host">Diventa Host</a>
+                        <a href="http://127.0.0.1:8000/host">Area Host</a>
                     </div>
 
                 <HamburgerMenu
